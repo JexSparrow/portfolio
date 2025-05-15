@@ -17,10 +17,10 @@ position: absolute; /* Fixo na viewport */
 
 const scroll = keyframes`
   0% {
-    transform: translateX(calc(-350px * 9));
+    transform: translateX(calc(-300px * 12));
   }
   100% {
-    transform: translateX(calc(80px * 18));
+    transform: translateX(calc(60px * 24));
   }
 `;
 
@@ -93,8 +93,8 @@ export const Slider = styled.div`
 
 export const SliderTrack = styled.div`
   display: flex;
-    width: calc(300px * 18);
-  animation: ${scroll} 25s linear infinite;
+    width: calc(300px * 24);
+  animation: ${scroll} 20s linear infinite;
 
   &:hover {
     animation-play-state: paused;

@@ -21,6 +21,7 @@ import spock from '../../src/assets/spock.png'
 import tesla3 from '../../src/assets/tesla3.png'
 import dado1 from '../../src/assets/dado1.png'
 import instagram from '../../src/assets/instagram.png'
+import loading from '../../src/assets/loading.png'
 
 import astro from '../../src/assets/astro.mp4'
 
@@ -28,6 +29,18 @@ import astro from '../../src/assets/astro.mp4'
 
 // Atualize a sua lista de projetos para incluir título, descrição e link
 const projetosInfo = [
+    {
+        src: loading,
+        alt: "Loading",
+        titulo: "< Em Desenvolvimento />",
+        descricao: `Projeto em desenvolvimento. 
+        
+        Novidades em Breve!`,
+        link: "https://github.com/JexSparrow",
+        tecnologias: "Em Desenvolvimento",
+        img: [html, css3, js, figma, react, node, postgres, mongo, docker],
+        videoId: ""
+    },
     {
         src: tesla3,
         alt: "Tesla",
