@@ -31,8 +31,14 @@ const projetosInfo = [
     {
         src: tesla3,
         alt: "Tesla",
-        titulo: "Experimente o Futuro em Movimento ⚡️",
-        descricao: "✅ Design Futurista: Uma estética limpa e focada no essencial, que exala elegância e modernidade.✅ Animações Sutis e Envolventes: Elementos que deslizam e aparecem com fluidez, criando uma experiência visualmente agradável e intuitiva. ✅ Foco na Experiência do Usuário: Navegação simples e direta, com informações relevantes ao alcance de um clique.✅ Chamada para Ação Criativa: Botões de compra e test-drive que transformam a interação em um convite à experiência.Totalmente responsivo para dispositivos móveis!",
+        titulo: "Experimente o Futuro em Movimento",
+        descricao: `✅ Design Futurista: Uma estética limpa e focada no essencial, que exala elegância e modernidade.
+        
+        ✅ Animações Sutis e Envolventes: Elementos que deslizam e aparecem com fluidez, criando uma experiência visualmente agradável e intuitiva. 
+        
+        ✅ Foco na Experiência do Usuário: Navegação simples e direta, com informações relevantes ao alcance de um clique.
+        
+        ✅ Chamada para Ação Criativa: Botões de compra e test-drive que transformam a interação em um convite à experiência.Totalmente responsivo para dispositivos móveis!`,
         link: "https://github.com/JexSparrow/Tesla",
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js],
@@ -41,8 +47,14 @@ const projetosInfo = [
     {
         src: instagram,
         alt: "Instagram",
-        titulo: "Landing Page Instagram! 📱",
-        descricao: "✅ Familiaridade Instantânea: O layout e os elementos visuais foram cuidadosamente inspirados na interface de login do Instagram, proporcionando uma sensação de reconhecimento imediato.✅ Loop de Imagens Envolvente: A transição suave entre as telas de demonstração do feed prende o olhar e adiciona um dinamismo sutil à página. ✅ Animação​: Um script simples em JavaScript controla a opacidade de duas imagens de demonstração, criando um efeito de fade-in e fade-out em loop, simulando a troca de telas dentro do aplicativo.Esta landing page não é apenas uma cópia estática; ela ganha vida com um toque de animação que captura a essência dinâmica do Instagram.É uma demonstração concisa de como a atenção aos detalhes visuais e a utilização estratégica de JavaScript podem enriquecer a experiência do usuário, mesmo em uma página de login.Página responsiva para dispositivos móveis!",
+        titulo: "Landing Page Instagram!",
+        descricao: `✅ Familiaridade Instantânea: O layout e os elementos visuais foram cuidadosamente inspirados na interface de login do Instagram, proporcionando uma sensação de reconhecimento imediato.
+        
+        ✅ Loop de Imagens Envolvente: A transição suave entre as telas de demonstração do feed prende o olhar e adiciona um dinamismo sutil à página.
+        
+        ✅ Animação: Um script simples em JavaScript controla a opacidade de duas imagens de demonstração, criando um efeito de fade-in e fade-out em loop, simulando a troca de telas dentro do aplicativo.
+                  
+         Página responsiva para dispositivos móveis!`,
         link: "https://github.com/JexSparrow/instagram-login",
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js, figma],
@@ -51,8 +63,12 @@ const projetosInfo = [
     {
         src: dado1,
         alt: "Sorteador",
-        titulo: "Alguém falou em Sorteio? ✨",
-        descricao: "Apresento um projeto simples, porém funcional e intuitivo: um sorteador de números personalizado que coloca o poder da probabilidade nas mãos do usuário. Com uma interface limpa construída em HTML e CSS, e a lógica dinâmica implementada em JavaScript, este projeto permite que os usuários definam um intervalo numérico (especificando um valor mínimo e um máximo) e, com um único clique, revelem um número aleatório dentro desse limite. É a ferramenta perfeita para sorteios rápidos, tomadas de decisão aleatórias ou simplesmente para testar a sua sorte!",
+        titulo: "Alguém falou em Sorteio?",
+        descricao: `Apresento um projeto simples, porém funcional e intuitivo: um sorteador de números personalizado que coloca o poder da probabilidade nas mãos do usuário. 
+        
+        Com uma interface limpa construída em HTML e CSS, e a lógica dinâmica implementada em JavaScript, este projeto permite que os usuários definam um intervalo numérico (especificando um valor mínimo e um máximo) e, com um único clique, revelem um número aleatório dentro desse limite.
+        
+        É a ferramenta perfeita para sorteios rápidos, tomadas de decisão aleatórias ou simplesmente para testar a sua sorte!`,
         link: "https://github.com/JexSparrow/Random",
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js],
@@ -62,7 +78,9 @@ const projetosInfo = [
         src: spock,
         alt: "Jokenpo",
         titulo: "Jokenpo com I.A",
-        descricao: "Preparem-se para conhecer um projeto divertido e que demonstra minhas habilidades em desenvolvimento front-end: um clássico Jogo de Pedra, Papel e Tesoura totalmente interativo e responsivo! Construído com HTML para a estrutura fundamental, CSS para um visual atraente e intuitivo, e JavaScript para a lógica de jogo dinâmica, este projeto oferece uma experiência de usuário envolvente onde humanos podem desafiar a inteligência artificial (carinhosamente apelidada de 'Alexa' no código!).",
+        descricao: `Preparem-se para conhecer um projeto divertido e que demonstra minhas habilidades em desenvolvimento Front-End: um clássico Jogo de Pedra, Papel e Tesoura totalmente interativo e responsivo! 
+        
+        Construído com HTML para a estrutura fundamental, CSS para um visual atraente e intuitivo, e JavaScript para a lógica de jogo dinâmica, este projeto oferece uma experiência de usuário envolvente onde humanos podem desafiar a inteligência artificial (carinhosamente apelidada de 'Alexa' no código!).`,
         link: "https://github.com/JexSparrow/Jokenpo",
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js],
@@ -72,7 +90,13 @@ const projetosInfo = [
         src: apple,
         alt: "Landing-Page-Apple",
         titulo: "Desvende o Universo iPhone",
-        descricao: "✅ Paleta de Cores Dinâmica: Altere instantaneamente a cor de destaque da página (background, botão, título e borda do header) com seletores intuitivos.✅ Troca de Imagens Fluida: Visualize diferentes modelos de iPhone com uma simples mudança de imagem. ✅ Responsividade Inteligente: A página se adapta perfeitamente a telas mobile, com ajustes visuais sutis, como a inversão da imagem do celular e um sutil efeito de sombra no header .✅ Interatividade Sutil: Um efeito de 'girar' o iPhone ao interagir (mouse over/out) adiciona um toque dinâmico e convidativo na versão desktop.",
+        descricao: `✅ Paleta de Cores Dinâmica: Altere instantaneamente a cor de destaque da página com seletores intuitivos.
+        
+        ✅ Troca de Imagens Fluida: Visualize diferentes modelos de iPhone com uma simples mudança de imagem. 
+        
+        ✅ Responsividade Inteligente: A página se adapta perfeitamente a telas mobile, com ajustes visuais sutis, como a inversão da imagem do celular e um sutil efeito de sombra no header .
+        
+        ✅ Interatividade Sutil: Um efeito de 'girar' o iPhone ao interagir (mouse over/out) adiciona um toque dinâmico e convidativo na versão desktop.`,
         link: "https://github.com/JexSparrow/Iphone14",
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js, figma],
@@ -81,8 +105,16 @@ const projetosInfo = [
     {
         src: pig,
         alt: "Conversor",
-        titulo: "Conversor de Moedas💰",
-        descricao: "✅ Cotações em Tempo Real: Conectado a uma API financeira confiável, o conversor busca as taxas de câmbio mais recentes, garantindo precisão nas conversões.✅ Suporte a Múltiplas Moedas: Converta entre Dólar, Euro, Libra, Bitcoin, Yuan e Real, oferecendo uma visão global do valor do seu dinheiro.✅ Seletores Intuitivos: Escolha facilmente as moedas de conversão através de menus dropdown claros e objetivos.✅ Visualização Instantânea: O valor convertido é atualizado automaticamente ao inserir o montante e selecionar as moedas desejadas.",
+        titulo: "Conversor de Moedas",
+        descricao: `✅ Cotações em Tempo Real: Conectado a uma API financeira confiável, o conversor busca as taxas de câmbio mais recentes, garantindo precisão nas conversões.
+
+        ✅ Suporte a Múltiplas Moedas: Converta entre Dólar, Euro, Libra, Bitcoin, Yuan e Real, oferecendo uma visão global do valor do seu dinheiro.
+        
+        ✅ Seletores Intuitivos: Escolha facilmente as moedas de conversão através de menus dropdown claros e objetivos.
+        
+        ✅ Visualização Instantânea: O valor convertido é atualizado automaticamente ao inserir o montante e selecionar as moedas desejadas.`,
+
+
         link: "https://github.com/JexSparrow/Conversor",
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js, api, figma],
@@ -91,8 +123,12 @@ const projetosInfo = [
     {
         src: starbucks,
         alt: "Starbucks-Landing-Page",
-        titulo: " Uma Experiência Starbucks Interativa ☕",
-        descricao: "Nesta página, os usuários podem personalizar sua própria 'Bebida Starbucks' visualmente, alterando dinamicamente as cores de elementos chave da interface e trocando a imagem do copo com apenas alguns cliques. É uma forma envolvente de demonstrar como a interatividade pode enriquecer a experiência do usuário e destacar a identidade visual de uma marca. O projeto demonstra como o JavaScript pode ser usado para criar elementos interativos que respondem diretamente às ações do usuário, tornando a experiência mais atrativa.",
+        titulo: " Uma Experiência Starbucks Interativa",
+        descricao: `Nesta página, os usuários podem personalizar sua própria 'Bebida Starbucks' visualmente, alterando dinamicamente as cores de elementos chave da interface e trocando a imagem do copo com apenas alguns cliques.
+        
+        É uma forma envolvente de demonstrar como a interatividade pode enriquecer a experiência do usuário e destacar a identidade visual de uma marca. 
+        
+        O projeto demonstra como o JavaScript pode ser usado para criar elementos interativos que respondem diretamente às ações do usuário, tornando a experiência mais atrativa.`,
         link: "https://exemplo.com/portfolio-html",
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js, figma],
@@ -101,8 +137,12 @@ const projetosInfo = [
     {
         src: clima,
         alt: "Previsão-Clima",
-        titulo: "Meu Site de Previsão Meteorológica Dinâmica! ☀️",
-        descricao: " Nesse desenvolvi um site de previsão do tempo interativo, construído com a base sólida do HTML, a elegância do CSS e a inteligência do JavaScript, impulsionado por uma API de dados climáticos em tempo real. Esqueça as previsões estáticas! Este site permite que os usuários consultem as condições climáticas atuais de qualquer cidade do mundo, com informações atualizadas dinamicamente sobre temperatura, sensação térmica, descrição do tempo, umidade e até mesmo um ícone ilustrativo das condições. É como ter seu próprio meteorologista pessoal, sempre à disposição ",
+        titulo: "Previsão do Clima Dinâmica!",
+        descricao: `Desenvolvi um site de previsão do tempo interativo, construído HTML, CSS e JavaScript, impulsionado por uma API de dados climáticos em tempo real. 
+
+        Esqueça as previsões estáticas! Este site permite que os usuários consultem as condições climáticas atuais de qualquer cidade do mundo, com informações atualizadas dinamicamente sobre temperatura, sensação térmica, descrição do tempo, umidade e até mesmo um ícone ilustrativo das condições. 
+        
+        É como ter seu próprio meteorologista pessoal, sempre à disposição`,
         link: "https://github.com/JexSparrow/Previsao-Tempo",
         tecnologias: "HTML, CSS, JAVASCRIPT e API",
         img: [html, css3, js, api],
@@ -112,7 +152,13 @@ const projetosInfo = [
         src: netflix,
         alt: "Netflix-Page",
         titulo: "Landing Page - Netflix",
-        descricao: "Uma landing page inspirada na gigante do Streaming, ao abrir a página o usuário é recebido pelo som icõnico 'Tudum'. Um vídeo de fundo da série Stranger Things capta a atenção do usuário e com um toque no botão do som , o vídeo fica tela cheia e sem as informações de texto. Um carrosel mostra os pricipais lançamentos , para ficar antenado!",
+        descricao: `Uma landing page inspirada na gigante do Streaming!
+
+         Ao abrir a página o usuário é recebido pelo som icõnico 'Tudum'. Um vídeo de fundo da série Stranger Things capta a atenção do usuário e com um toque no botão do som , o vídeo fica tela cheia e sem as informações de texto. 
+
+         Um carrosel mostra os pricipais lançamentos, para o usuário ficar por dentro de todas as novidades do catálogo.
+         
+         Página Totalmente Responsiva para Dispositivos Móveis!`,
         link: "https://github.com/JexSparrow/Netflix",
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js],
@@ -122,7 +168,12 @@ const projetosInfo = [
         src: DevBurguer,
         alt: "DevBurguer-Interface",
         titulo: "<DEV BURGUER/>",
-        descricao: "No Front-end utilizei o React+Vite para criar a aplicação, com o objetivo de praticar a integração de algumas bibliotecas muito utilizadas.Para estilização dos componentes, utilizei o Styled-Components, o que me permitiu criar uma interface moderna e responsiva diretamente no JavaScript. Também foi utilizado o Axios para fazer a comunicação com a API, enviando as informações de login de forma simples e segura.Para a navegação entre as páginas, implementei o React Router DOM, permitindo o redirecionamento automático após o Login.",
+        descricao: `No Front-end utilizei o React+Vite para criar a aplicação, com o objetivo de praticar a integração de algumas bibliotecas muito utilizadas.
+
+        Para estilização dos componentes, utilizei o Styled-Components, o que me permitiu criar uma interface moderna e responsiva diretamente no JavaScript. 
+
+        Também foi utilizado o Axios para fazer a comunicação com a API, enviando as informações de login de forma simples e segura.
+        Para a navegação entre as páginas, implementei o React Router DOM, permitindo o redirecionamento automático após o Login.`,
         link: "https://github.com/JexSparrow/devburguer-interface",
         tecnologias: "HTML, CSS, JAVASCRIPT, REACT, NODE e BANCO DE DADOS",
         img: [html, css3, js, figma, react, node, postgres, mongo, docker],
@@ -132,7 +183,16 @@ const projetosInfo = [
         src: mario,
         alt: "Mario-Bros",
         titulo: "Landing Page - Mario Bros.",
-        descricao: "Uma página interativa, totalmente responsiva para dispositivos móveis. Formulário e whatsapp para entrar em contato e tirar todas as dúvidas sobre nossos serviços",
+        descricao: `Prepare-se para uma viagem no tempo inesquecível! 
+        
+        Esta landing page te transporta diretamente para o universo vibrante e divertido de Mario e Luigi, com uma dose extra de profissionalismo encanador!
+        
+        Uma página interativa, totalmente responsiva para dispositivos móveis.
+
+        Precisa de ajuda? É super fácil! Um botão convidativo te chama para entrar em contato, deslizando um formulário amigável na tela com uma animação nostálgica, pronto para receber sua solicitação. E para um atendimento ainda mais rápido, um atalho direto para o WhatsApp está sempre à mão!
+        
+        Página Totalmente Responsiva para Dispositivos Móveis!`,
+
         link: "https://github.com/JexSparrow/Mario",
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js],
@@ -166,6 +226,12 @@ function Projetos() {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [handleClickOutside]);
+
+    useEffect(() => {
+        if (projetosRef.current) {
+            projetosRef.current.id = 'projetos'; // Define o ID da seção de projetos
+        }
+    }, []);
 
     return (
         <Conteiner ref={projetosRef}>
@@ -224,8 +290,9 @@ function Projetos() {
                             </div>
 
                             <ProjetoLink href={projetoSelecionado.link} target="_blank" rel="noopener noreferrer">
-                                ir para GitHub
+                                Ir para GitHub
                             </ProjetoLink>
+
                         </ProjetoDetalhes>
 
                     </ConteinerVideoInfos>

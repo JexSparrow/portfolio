@@ -15,6 +15,10 @@ button , a {
     cursor: pointer;
 }
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 `
 
 export default globalStyles;

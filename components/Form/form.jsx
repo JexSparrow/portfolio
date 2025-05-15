@@ -1,10 +1,20 @@
 import { BackgroundVideo, Button, Conteiner, FormBox, Formulario, Input, Label, TextArea, Title } from "./styles";
 import anomaly from '../../src/assets/anomaly.mp4';
+import { useRef, useEffect } from 'react'; // Importe useRef e useEffect
 
 
 function Form() {
+
+    const formRef = useRef(null); // Crie uma ref para o container principal
+
+    useEffect(() => {
+        if (formRef.current) {
+            formRef.current.id = 'contato'; // Defina o ID da seção de contato
+        }
+    }, []);
+
     return (
-        <Conteiner>
+        <Conteiner ref={formRef}>
 
             <BackgroundVideo src={anomaly} autoPlay loop muted />
 

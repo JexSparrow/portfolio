@@ -28,6 +28,7 @@ export const Link = styled.a`
   font-size: 22px;
   font-weight: 500;
   cursor: pointer;
+   text-decoration: none;
   transition: 200ms all ease-in;
 
   &:hover {
@@ -35,5 +36,10 @@ export const Link = styled.a`
     color: #fff;
     scale: 1.15;
 
+  }
+
+  &:active {
+    color: #ff01b7;
+    scale: 1.25;
   }
 `;

@@ -27,11 +27,11 @@ export const Conteiner = styled.div`
 `;
 
 export const Simbolo = styled.span`
-color:rgb(255, 1, 183);
+color:#ff01b7;
 `;
 
 export const DivTop = styled.div`
-    background-color: rgba(45, 8, 76, 0.9);
+    background-color: rgba(45, 8, 76, 0.75);
   position: absolute; /* Posiciona a DivTop sobre o vídeo */
   top: 0;
   left: 0;
@@ -66,6 +66,8 @@ export const DivTop = styled.div`
   h1 {
 
     font-family: 'Orbitron';
+    text-shadow: 3px 1px 5px rgba(0, 183, 174, 0.81);
+
     letter-spacing: 10px;
     font-size: 72px;
     color: aliceblue;
@@ -77,6 +79,13 @@ export const DivTop = styled.div`
     font-family: 'Orbitron';
     font-size: 52px;
     letter-spacing: 0px;
+    transition: 200ms all ease-in-out;
+
+    &:hover {
+      color: aliceblue;
+     
+   
+    }
   }
 
   
@@ -97,11 +106,25 @@ display: flex;
 flex-direction: column;
 
 span {
-  font-size: 26px;
-  color: #01FFFE;
-  font-family: 'Anta';
-}
+    font-size: 26px;
+    color: #01FFFE;
+    font-family: 'Anta';
+    transition: 200ms all ease-in-out;
 
+    &:hover {
+      color: aliceblue;
+    }
+  }
+
+  > div {
+
+    span:nth-of-type(2):hover,
+    span:nth-of-type(1):hover {
+
+    color: yellow;
+  }
+
+  } 
 `;
 
 

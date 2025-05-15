@@ -93,7 +93,7 @@ export const Slider = styled.div`
 
 export const SliderTrack = styled.div`
   display: flex;
-    width: calc(250px * 18);
+    width: calc(300px * 18);
   animation: ${scroll} 25s linear infinite;
 
   &:hover {
@@ -136,15 +136,29 @@ export const ProjetoDetalhesContainer = styled.div`
 
 export const ConteinerVideoInfos = styled.div`
   width: 95%;
-  height: 85vh;
+  height: 88vh;
   border-radius: 25px;
-  background-color: rgba(144, 4, 204, 0.41);/* Escolha suas cores e direção */
+  background-color: rgba(144, 4, 204, 0.38);/* Escolha suas cores e direção */
   backdrop-filter: blur(5px); /* Ajuste o valor do blur conforme desejado */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2%;
   padding: 1%;
+  box-shadow: #01FFFE 0px 0px 70px -20px inset,
+            0px 0px 20px 0px #01FFFE;
+
+  h3 {
+    font-family: 'Tektur';
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+
+  iframe {
+    border: none;
+    box-shadow:rgba(0, 255, 238, 0.51) 0px 0px 100px -20px;
+    
+  }
 
 `;
 
@@ -161,38 +175,60 @@ export const ProjetoDetalhes = styled.div`
   text-align: center;
   gap: 4%;  
 
+  h3 {
+    font-family: 'Orbitron';
+    font-size: 20px;
+    
+  }
+
   img {
     
     height: 76px;
     cursor: pointer;
-    transition: 100ms all ease-in-out;
+    transition: 150ms all ease-in-out;
 
   }
 
   & img:hover {
     scale: 1.1;
+   
   }
   
 `;
 
 export const ProjetoTitulo = styled.h2`
-  font-size: 2.5em;
+  font-size: 2.75em;
+  font-family: 'Orbitron';
+  letter-spacing: 2px;
  
 `;
 
 export const ProjetoDescricao = styled.p`
-  font-size: 1.5em;
+line-height: 95%;
+text-align: left;
+white-space: pre-line;
+  font-size: 1.4em;
+  font-family: 'Anta';
  
 `;
 
 export const ProjetoLink = styled.a`
  
+ font-family: 'Oxanium';
   font-size: 30px;
-  color: lightblue;
+  color: aliceblue;
   text-decoration: none;
   font-weight: bold;
+  transition: 200ms all ease-in-out;
+  margin: 0 auto;
+ 
   
   &:hover {
-    text-decoration: underline;
+    scale: 1.15;
+    color: #01FFFE ;
+  }
+
+  &:active {
+    scale: 0.90;
   }
 `;
