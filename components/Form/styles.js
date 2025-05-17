@@ -42,7 +42,7 @@ color: aliceblue;
 export const FormBox = styled.div`
 background-color: rgba(144, 4, 204, 0.41);/* Escolha suas cores e direção */
 backdrop-filter: blur(2.5px); /* Ajuste o valor do blur conforme desejado */
-height: 90%;
+height: 100%;
 min-width: 35%;
 max-width: 80%;
 border-radius: 25px;
@@ -78,7 +78,7 @@ gap: 20px;
 export const Label = styled.label`
 font-family: 'Anta';
 font-size: 28px;
-color: aliceblue;
+color:rgba(1, 255, 255, 0.75);
 
 `;
 
@@ -86,10 +86,20 @@ export const Input = styled.input`
 font-family: 'Anta';
 padding: 0 2.5%;
 font-size: 1.5em;
-height: 1.75em;
+height: 2em;
 border: none;
 border-radius: 10px;
 outline: none;
+background-color: rgba(255, 255, 255, 0.25);
+color: #fff;
+transition: 300ms all ease-in-out;
+
+&:focus {
+  background-color: rgba(255, 255, 255, 0.20);
+  box-shadow: #01FFFE 0px 0px 40px -20px inset;
+  
+  
+}
 
 
 
@@ -102,10 +112,20 @@ font-weight: 500;
 font-size: 1.5em;
 height: 6em;
 padding: 2%;
+border: none;
 border-radius: 10px;
 resize: none;
 overflow: auto;
 outline: none;
+background-color: rgba(255, 255, 255, 0.25);
+color: #fff;
+
+&:focus {
+  background-color: rgba(255, 255, 255, 0.20);
+  box-shadow:rgba(1, 255, 255, 0.75) 0px 0px 60px -20px inset;
+  
+  
+}
 
 /* Estilização para navegadores WebKit (Chrome, Safari, Edge) */
   &::-webkit-scrollbar {
@@ -168,5 +188,28 @@ export const Button = styled.button`
   &:hover span {
     background: none;
   }
+`;
+
+export const Whatsapp = styled.a`
+
+img {
+position: absolute;
+right: 1%;
+bottom: 3% ;
+z-index: 999;
+height: 55px;
+transition: 200ms all ease-in;
+cursor: pointer;
+
+&:hover {
+  scale: 1.1;
+  transform: translateY(-10px);
+  
+}
+
+
+
+}
+
 `;
 

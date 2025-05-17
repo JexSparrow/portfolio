@@ -94,7 +94,7 @@ export const Slider = styled.div`
 export const SliderTrack = styled.div`
   display: flex;
     width: calc(300px * 24);
-  animation: ${scroll} 20s linear infinite;
+  animation: ${scroll} 25s linear infinite;
 
   &:hover {
     animation-play-state: paused;
@@ -200,6 +200,11 @@ export const ProjetoTitulo = styled.h2`
   font-size: 2.75em;
   font-family: 'Orbitron';
   letter-spacing: 2px;
+  transition: 250ms all ease-in-out;
+
+  &:hover {
+    color: yellow;
+  }
  
 `;
 

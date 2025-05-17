@@ -1,10 +1,13 @@
 import me from "../../src/assets/me.png"
 import solar from "../../src/assets/solar.mp4"
+
 import { BackgroundVideo, Conteiner, DivParagrafo, DivTop, Simbolo } from "./styles";
 
 function App() {
   return (
     <>
+
+
 
       <BackgroundVideo src={solar} autoPlay loop muted />
 
@@ -30,6 +33,8 @@ function App() {
           <img src={me} alt="Jeferson Santos" />
         </DivTop>
       </Conteiner >
+
+
     </>
 
   );
