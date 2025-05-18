@@ -97,6 +97,13 @@ export const DivTop = styled.div`
     z-index: 1; /* Garante que a imagem fique acima do vídeo */
     pointer-events: auto; /* Permite interações com a imagem (se houver) */
    box-shadow: rgba(0, 150, 158, 0.56) 0px 22px 70px 4px;
+   transition: 250ms all ease-in-out;
+
+   &:hover {
+    box-shadow: rgba(251, 255, 0, 0.83) 0px 0px 300px 4px;
+    scale: 0.98;
+
+   }
   }
 
 `;

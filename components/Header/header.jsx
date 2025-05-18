@@ -1,5 +1,5 @@
 import { Conteiner, Link } from "./styles"
-import logo from '../../src/assets/logo.png'
+import jslogo from '../../src/assets/jslogo.png'
 import curriculo from '../../src/assets/curriculo.pdf'
 
 
@@ -8,8 +8,13 @@ function Header() {
     return (
         <>
             <Conteiner>
-                <img src={logo} alt='logo' />
-                <Link>Home</Link>
+                <div>
+                    <img src={jslogo} alt='logo' />
+                    <p>Dev Front End</p>
+
+                </div>
+
+                <Link id="home">Home</Link>
                 <Link href="https://github.com/JexSparrow" target="blank">Github</Link>
                 <Link href="#projetos">Projetos</Link>
                 <Link href="#contato">Contato</Link>

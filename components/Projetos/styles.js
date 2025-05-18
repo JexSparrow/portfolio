@@ -34,6 +34,25 @@ position: relative;
   place-items: center;
   box-shadow: rgba(0, 0, 2, 0.95) 0px 50px 20px -15px inset, rgba(0, 0, 0, 0.95) 0px 50px 36px -50px inset;
 `;
+export const BoxTitle = styled.div`
+
+p {
+    color: #fff ;
+    font-family: 'Tektur';
+    letter-spacing: 1px;
+    font-size: 22px;
+    position: absolute;
+    left: 50%;
+    text-shadow: 1px 1px 1px #ff005e, 2px 2px 1px #00d4ff;
+     transition: 200ms all ease-in-out;
+
+    &:hover {
+      scale: 1.05;
+      color: yellow;
+    }
+
+} 
+`;
 
 export const Title = styled.h1`
     font-family: 'Orbitron';
@@ -42,6 +61,11 @@ export const Title = styled.h1`
     color: #fff;
     text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
     animation: shadow-dance 2s infinite;
+     transition: 200ms all ease-in-out;
+
+    &:hover {
+      scale: 1.05;
+    }
 
 
 @keyframes shadow-dance {

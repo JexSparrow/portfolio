@@ -15,6 +15,12 @@ export const Conteiner = styled.div`
     letter-spacing: 5px;
     font-size: 50px;
     color: aliceblue;
+    text-shadow: 2px 2px 1px #ff005e, 3px 3px 1px #00d4ff;
+    transition: 200ms all ease-in-out;
+
+    &:hover {
+      scale: 1.05;
+    }
 
   }
 `;

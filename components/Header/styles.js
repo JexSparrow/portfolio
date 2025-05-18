@@ -9,18 +9,38 @@ export const Conteiner = styled.div`
   align-items: center;
   box-shadow: #01FFFE 0px 0px 50px -10px;
                        
+div {
+
+  position: relative;
+  margin-right: 25%;
+  
+  
 
   img {
-    margin-right: 25%;
-    height: 75px;
-    transition: 500ms all ease-in-out;
-    cursor: pointer ;
+    
+    height: 45px;
+    /* transition: 250ms all ease-in-out; */
+    
 
-    &:hover {
-        transform: rotateY(180deg);
-    }
+    
   }
-`;
+
+  p {
+    color: aliceblue;
+    font-family: 'Orbitron';
+    font-size: 10px;
+    font-weight: bolder;
+    position: absolute;
+    top: 90%;
+    left: -30%;
+   width: 100px;
+    height: 100%;
+    z-index: 99;
+  }
+
+
+}`;
+
 
 export const Link = styled.a`
   font-family: 'Orbitron', sans-serif; /* Correção: Nome da fonte principal entre aspas */

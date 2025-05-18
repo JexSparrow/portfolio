@@ -1,4 +1,4 @@
-import { BackgroundVideo, Conteiner, ConteinerVideoInfos, ProjetoDescricao, ProjetoDetalhes, ProjetoDetalhesContainer, ProjetoLink, ProjetoTitulo, Slide, Slider, SliderTrack, Title } from "./styles";
+import { BackgroundVideo, BoxTitle, Conteiner, ConteinerVideoInfos, ProjetoDescricao, ProjetoDetalhes, ProjetoDetalhesContainer, ProjetoLink, ProjetoTitulo, Slide, Slider, SliderTrack, Title } from "./styles";
 import css3 from '../../src/assets/css3.png';
 import docker from '../../src/assets/docker.png';
 import figma from '../../src/assets/figma.png';
@@ -251,10 +251,12 @@ function Projetos() {
 
             <BackgroundVideo src={astro} autoPlay loop muted />
 
-            <div>
+            <BoxTitle>
 
                 <Title>Projetos</Title>
-            </div>
+                <p>Clique e Confira</p>
+            </BoxTitle>
+
 
             <Slider>
                 <SliderTrack style={{ animationPlayState: animacaoPausada ? 'paused' : 'running' }}>

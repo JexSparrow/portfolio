@@ -36,6 +36,13 @@ font-family: 'Orbitron';
 letter-spacing: 3px;
 font-size: 52px;
 color: aliceblue;
+text-shadow: 2px 2px 1px #ff005e, 3px 3px 1px #00d4ff;
+transition: 200ms all ease-in-out;
+
+    &:hover {
+      scale: 0.95;
+      
+    }
 
 `
 
@@ -207,9 +214,23 @@ cursor: pointer;
   
 }
 
-
-
 }
 
+`;
+
+export const Arrow = styled.a`
+position: absolute;
+left: 1%;
+bottom: 1% ;
+z-index: 999;
+transition: 200ms all ease-in;
+cursor: pointer;
+
+&:hover {
+  scale: 1.1;
+  transform: translateY(-10px);
+  
+  
+}
 `;
 
