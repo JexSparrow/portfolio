@@ -16,7 +16,7 @@ function Form() {
         e.preventDefault(); // Evita o recarregamento da página
 
         // Substitua pelos IDs que você obteve no EmailJS
-        emailjs.sendForm('eSlebE2D61Tmmoxta', 'eSlebE2D61Tmmoxta', formEmailRef.current, 'KQbhGcJJ2VvFM72eefhZI')
+        emailjs.sendForm('service_123456email', 'template_rrcrlr1', formEmailRef.current, 'eSlebE2D61Tmmoxta')
             .then(() => {
                 alert('Mensagem enviada com sucesso!');
                 formEmailRef.current.reset(); // Limpa o formulário após o envio
