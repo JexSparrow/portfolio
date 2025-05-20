@@ -104,6 +104,11 @@ export const Label = styled.label`
 font-family: 'Anta';
 font-size: 28px;
 color:rgba(1, 255, 255, 0.75);
+transition: 500ms all ease-in-out;
+
+&:hover {
+  color: yellow;
+}
 
 `;
 
@@ -118,6 +123,11 @@ outline: none;
 background-color: rgba(255, 255, 255, 0.25);
 color: #fff;
 transition: 300ms all ease-in-out;
+
+&:hover {
+  background-color: rgba(164, 146, 146, 0.35);
+
+}
 
 &:focus {
   background-color: rgba(255, 255, 255, 0.20);
@@ -144,12 +154,18 @@ overflow: auto;
 outline: none;
 background-color: rgba(255, 255, 255, 0.25);
 color: #fff;
+transition: 300ms all ease-in-out;
+
+&:hover {
+  background-color: rgba(164, 146, 146, 0.35);
+
+}
 
 &:focus {
   background-color: rgba(255, 255, 255, 0.20);
   box-shadow:rgba(1, 255, 255, 0.75) 0px 0px 60px -20px inset;
   
-  
+
 }
 
 /* Estilização para navegadores WebKit (Chrome, Safari, Edge) */
