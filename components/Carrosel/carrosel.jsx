@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { CarrosselContainer, CarrosselWrapper, Conteiner, Slide, TecnologiaImagem } from './styles';
+import { CarrosselContainer, CarrosselWrapper, Conteiner, Slide, TecnologiaImagem, Title } from './styles';
 import canva from '../../src/assets/canva.png';
 import css3 from '../../src/assets/css3.png';
 import docker from '../../src/assets/docker.png';
@@ -25,16 +25,74 @@ const tecnologias = [
 ];
 
 function Carrosel() {
+
     const [scrollPosition, setScrollPosition] = useState(0);
     const wrapperRef = useRef(null);
     const animationSpeed = 1.25;
     const numeroDeTecnologias = tecnologias.length;
     const tecnologiasDuplicadas = [...tecnologias, ...tecnologias];
 
+    const h1Ref = useRef(null);
+    const carrosselRef = useRef(null);
+    const [h1IsVisible, setH1IsVisible] = useState(false);
+    const [carrosselIsVisible, setCarrosselIsVisible] = useState(false);
+
+    useEffect(() => {
+        // Captura os valores atuais dos refs no início do efeito
+        // Isso resolve o aviso do ESLint sobre refs em funções de cleanup
+        const currentH1Ref = h1Ref.current;
+        const currentCarrosselRef = carrosselRef.current;
+
+        // Observer para o h1
+        const h1Observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setH1IsVisible(true);
+                        h1Observer.unobserve(entry.target); // Para disparar a animação apenas uma vez
+                    }
+                });
+            },
+            { threshold: 0.5 } // Sugestão para teste: anima com 10% visível
+        );
+
+        // Observer para o CarrosselContainer
+        const carrosselObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setCarrosselIsVisible(true);
+                        carrosselObserver.unobserve(entry.target); // Para disparar a animação apenas uma vez
+                    }
+                });
+            },
+            { threshold: 0.5 } // Sugestão para teste: anima com 10% visível (era 0.85)
+        );
+
+        // Observa os elementos se eles existirem
+        if (currentH1Ref) {
+            h1Observer.observe(currentH1Ref);
+        }
+        if (currentCarrosselRef) {
+            carrosselObserver.observe(currentCarrosselRef);
+        }
+
+        // Cleanup function para desconectar os observers quando o componente desmontar
+        return () => {
+            if (currentH1Ref) h1Observer.unobserve(currentH1Ref);
+            if (currentCarrosselRef) carrosselObserver.unobserve(currentCarrosselRef);
+        };
+    }, []); // As dependências estão vazias porque os observers e refs não mudam entre renderizações
+
     useEffect(() => {
         let animationFrameId;
         const animate = () => {
             setScrollPosition(prevPosition => {
+                // Adicionada verificação para wrapperRef.current para evitar erros
+                if (!wrapperRef.current) {
+                    return prevPosition; // Retorna a posição anterior se o ref for nulo
+                }
+
                 const nextPosition = prevPosition - animationSpeed;
                 const singleWidth = wrapperRef.current.offsetWidth / tecnologiasDuplicadas.length;
                 const resetThreshold = -singleWidth * numeroDeTecnologias;
@@ -50,23 +108,21 @@ function Carrosel() {
         animationFrameId = requestAnimationFrame(animate);
 
         return () => cancelAnimationFrame(animationFrameId);
-    }, [animationSpeed, numeroDeTecnologias, tecnologiasDuplicadas.length]);
+    }, [animationSpeed, numeroDeTecnologias, tecnologiasDuplicadas.length]); // Dependências da animação
 
     return (
         <Conteiner>
+            <Title ref={h1Ref} $isVisible={h1IsVisible}> Tecnologias Utilizadas </Title>
 
-            <h1>Tecnologias Utilizadas</h1>
-
-            <CarrosselContainer>
+            <CarrosselContainer ref={carrosselRef} $isVisible={carrosselIsVisible}>
                 <CarrosselWrapper
                     ref={wrapperRef}
                     style={{ transform: `translateX(${scrollPosition}px)` }}
-                    totalWidth={tecnologiasDuplicadas.length * (100 / numeroDeTecnologias)}
+                    totalWidth={200}
                 >
                     {tecnologiasDuplicadas.map((tec, index) => (
                         <Slide
                             key={index}
-                            // style={{ backgroundColor: tec.cor }}
                             totalSlides={tecnologiasDuplicadas.length}
                         >
                             <TecnologiaImagem src={tec.imagem} alt={tec.nome} />
@@ -75,12 +131,8 @@ function Carrosel() {
                     ))}
                 </CarrosselWrapper>
             </CarrosselContainer>
-        </Conteiner>
-
-    )
+        </Conteiner >
+    );
 }
-
-
-
 
 export default Carrosel;

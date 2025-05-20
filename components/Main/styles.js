@@ -1,4 +1,29 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+// Keyframes para o conteúdo vindo da esquerda
+export const slideInLeft = keyframes`
+  from {
+    transform: translateX(-100%); /* Começa 100% fora da tela à esquerda */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* Termina na posição original */
+    opacity: 1;
+  }
+`;
+
+// Keyframes para a imagem vindo da direita
+export const slideInRight = keyframes`
+  from {
+    transform: translateX(100%); /* Começa 100% fora da tela à direita */
+    opacity: 0;
+    
+  }
+  to {
+    transform: translateX(0); /* Termina na posição original */
+    opacity: 1;
+  }
+`;
 
 export const BackgroundVideo = styled.video`
   position: absolute; /* Fixo na viewport */
@@ -8,9 +33,9 @@ export const BackgroundVideo = styled.video`
   width: 100%; /* Mantém a proporção */
   height: auto; /* Mantém a proporção */
   z-index: -2; /* Bem no fundo */
-  object-fit: contain; /* Cobre a área, cortando se necessário, sem distorcer */
-  /* Para garantir que não haja interações indesejadas com o vídeo em si */
-  pointer-events: none;
+  object-fit: cover; /* Cobre a área, cortando se necessário, sem distorcer */
+ 
+  pointer-events: none;  /* Para garantir que não haja interações indesejadas com o vídeo em si */
   filter: brightness(0.75);
 `;
 
@@ -54,6 +79,11 @@ export const DivTop = styled.div`
     text-align: left; /* Centraliza o texto dentro dos elementos */
     z-index: 1; /* Garante que o texto fique acima do vídeo */
     pointer-events: auto; /* Permite interações com o texto */
+    
+
+     /* APLICAÇÃO DA ANIMAÇÃO DE ENTRADA DO LADO ESQUERDO */
+    /* animation: ${slideInLeft} 1.2s ease-out forwards; Ajuste a duração (1.2s) e o tipo de easing (ease-out)
+    animation-delay: 0.5s; Opcional: Adiciona um pequeno atraso para o conteúdo começar a animar */
   }
 
   p {
@@ -61,6 +91,10 @@ export const DivTop = styled.div`
     font-size: 22px;
     color: aliceblue;
     margin: 10px 0; /* Adiciona um pouco de margem vertical */
+    animation: ${slideInLeft} 1.2s ease-out forwards;
+    animation-delay: 500ms;
+    transform: translateX(-100%); /* Começa 100% fora da tela à esquerda */
+    opacity: 0;
   }
 
   h1 {
@@ -73,6 +107,10 @@ export const DivTop = styled.div`
     color: aliceblue;
     font-weight: 800;
     margin-bottom: 20px; /* Adiciona um pouco de margem abaixo do título */
+    animation: ${slideInLeft} 1.2s ease-out forwards;
+    animation-delay: 300ms;
+    transform: translateX(-100%); /* Começa 100% fora da tela à esquerda */
+    opacity: 0;
   }
 
   span {
@@ -97,13 +135,21 @@ export const DivTop = styled.div`
     z-index: 1; /* Garante que a imagem fique acima do vídeo */
     pointer-events: auto; /* Permite interações com a imagem (se houver) */
    box-shadow: rgba(0, 150, 158, 0.56) 0px 22px 70px 4px;
-   transition: 250ms all ease-in-out;
+   transition: 250ms box-shadow ease-in-out,
+   250ms scale ease-in-out;
+   transform: translateX(100%); /* Começa 100% fora da tela à direita */
+  opacity: 0;
 
    &:hover {
     box-shadow: rgba(251, 255, 0, 0.83) 0px 0px 300px 4px;
     scale: 0.98;
 
    }
+
+     /* APLICAÇÃO DA ANIMAÇÃO DE ENTRADA DA IMAGEM DO LADO DIREITO */
+    animation: ${slideInRight} 1.2s ease-out forwards; /* Ajuste a duração e o easing */
+    animation-delay: 300ms; /* Opcional: Um atraso ligeiramente maior para a imagem */
+
   }
 
 `;

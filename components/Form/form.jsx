@@ -2,26 +2,81 @@ import { Arrow, BackgroundVideo, Button, Conteiner, FormBox, Formulario, Input, 
 import anomaly from '../../src/assets/anomaly.mp4';
 import whatsapp from '../../src/assets/whatsapp.png';
 import arrowup from '../../src/assets/arrowup.svg';
-import { useRef, useEffect } from 'react'; // Importe useRef e useEffect
+import { useRef, useEffect, useState } from 'react'; // Importe useRef e useEffect
 
 import emailjs from '@emailjs/browser';
+import { Slide, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Importe os estilos CSS
+import './custom-toast.css'; // SEU CSS PERSONALIZADO (importar DEPOIS)
+
 
 
 function Form() {
 
     const formRef = useRef(null); // Crie uma ref para o container principal
     const formEmailRef = useRef();
+    const titleRef = useRef(null);
+    const [titleIsVisible, setTitleIsVisible] = useState(false);
 
     const sendEmail = (e) => {
-        e.preventDefault(); // Evita o recarregamento da página
+        e.preventDefault();
 
-        // Substitua pelos IDs que você obteve no EmailJS
-        emailjs.sendForm('service_123456email', 'template_rrcrlr1', formEmailRef.current, 'eSlebE2D61Tmmoxta')
+        // Acesse as variáveis de ambiente com process.env e o prefixo correto
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        console.log("VITE_EMAILJS_SERVICE_ID:", serviceId);
+        console.log("VITE_EMAILJS_TEMPLATE_ID:", templateId);
+        console.log("VITE_EMAILJS_PUBLIC_KEY:", publicKey);
+
+        // Verificação básica para garantir que as variáveis foram carregadas
+        if (!serviceId || !templateId || !publicKey) {
+            toast.error('💥 Erro: Chaves de API não configuradas corretamente.', {
+                toastClassName: 'my-custom-toast',
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Slide,
+            });
+            console.error('Variaveis de ambiente para EmailJS não localizadas!');
+            return;
+        }
+
+        emailjs.sendForm(serviceId, templateId, formEmailRef.current, publicKey)
             .then(() => {
-                alert('Mensagem enviada com sucesso!');
-                formEmailRef.current.reset(); // Limpa o formulário após o envio
+                toast.info('📩 Email enviado com sucesso!', {
+                    toastClassName: 'my-custom-toast',
+                    position: "bottom-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+
+                });
+                formEmailRef.current.reset();
             }, (error) => {
-                alert('Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.');
+                toast.error(' 💥 Ocorreu um erro ao enviar a o Email. Tente novamente mais tarde!', {
+                    toastClassName: 'my-custom-toast',
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Slide,
+                });
                 console.error('EmailJS error:', error);
             });
     };
@@ -32,6 +87,37 @@ function Form() {
         }
     }, []);
 
+    useEffect(() => {
+        // Captura os valores atuais dos refs no início do efeito
+        // Isso resolve o aviso do ESLint sobre refs em funções de cleanup
+        const currentTitleRef = titleRef.current;
+
+
+        // Observer para o h1
+        const titleObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setTitleIsVisible(true);
+                        titleObserver.unobserve(entry.target); // Para disparar a animação apenas uma vez
+                    }
+                });
+            },
+            { threshold: 1 } // Sugestão para teste: anima com 10% visível
+        );
+
+        if (currentTitleRef) {
+            titleObserver.observe(currentTitleRef);
+        }
+
+
+        // Cleanup function para desconectar os observers quando o componente desmontar
+        return () => {
+            if (currentTitleRef) titleObserver.unobserve(currentTitleRef);
+
+        };
+    }, []); // As dependências estão vazias porque os observers e refs não mudam entre renderizações
+
 
     return (
         <Conteiner ref={formRef}>
@@ -40,7 +126,7 @@ function Form() {
 
 
 
-            <Title>Entre em Contato</Title>
+            <Title ref={titleRef} $isVisible={titleIsVisible}>Entre em Contato</Title>
             <FormBox>
                 <Formulario ref={formEmailRef} onSubmit={sendEmail}>
                     <div>
@@ -55,15 +141,15 @@ function Form() {
 
                     <div>
                         <Label>Assunto</Label>
-                        <Input name="subject" required></Input>
+                        <Input type="text" name="subject" required></Input>
                     </div>
 
                     <div>
                         <Label>Mensagem</Label>
-                        <TextArea name="message" />
+                        <TextArea type="text" name="message" />
                     </div>
 
-                    <Button type="submit" ><span>Enviar</span></Button>
+                    <Button type="submit" value="send"><span>Enviar</span></Button>
 
                 </Formulario>
 
@@ -76,6 +162,8 @@ function Form() {
             <Arrow href="#home">
                 <img src={arrowup} />
             </Arrow>
+
+            <ToastContainer />
 
 
         </Conteiner>

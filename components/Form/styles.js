@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
+
+const fadeInUpAndScale = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.5); /* Começa 50px abaixo e com 50% do tamanho */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Termina na posição original e com 100% do tamanho */
+  }
+`;
 
 export const BackgroundVideo = styled.video`
 position: absolute; /* Fixo na viewport */
@@ -38,11 +49,18 @@ font-size: 52px;
 color: aliceblue;
 text-shadow: 2px 2px 1px #ff005e, 3px 3px 1px #00d4ff;
 transition: 200ms all ease-in-out;
+opacity: 0;
+    transform: translateY(50px) scale(0.5);
 
     &:hover {
       scale: 0.95;
       
     }
+
+     ${props => props.$isVisible && css`
+          animation: ${fadeInUpAndScale} 1.5s ease-out forwards;
+          animation-delay: 100ms;
+        `}
 
 `
 
@@ -173,11 +191,17 @@ export const Button = styled.button`
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
-  transition: scale 300ms ease-in-out; /* Adicionando transição suave para o hover */
+  transition: 300ms all ease-in-out; /* Adicionando transição suave para o hover */
 
   &:hover {
     scale: 1.05;
     
+  }
+
+  &:active {
+    scale: 0.95;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+
   }
 
   span {

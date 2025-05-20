@@ -1,0 +1,43 @@
+.Toastify__toast {
+    background-color: #363636 !important;
+    /* Seu novo background */
+    color: #ffffff !important;
+    /* Cor do texto */
+}
+
+/* Para o toast de sucesso */
+.Toastify__toast--success {
+    background-color: #4CAF50 !important;
+    /* Verde mais escuro */
+}
+
+/* Para o toast de erro */
+.Toastify__toast--error {
+    background-color: rgba(255, 17, 0, 0.749) !important;
+    color: yellow;
+    font-family: 'Tektur';
+    letter-spacing: 1px;
+    width: auto;
+    /* Vermelho mais escuro */
+}
+
+/* Para o toast de info */
+.Toastify__toast--info {
+    background-color: rgba(144, 4, 204, 0.41) !important;
+    font-family: 'Tektur';
+    letter-spacing: 1px;
+    width: auto;
+    color: #fff;
+}
+
+
+
+/* Para o toast de aviso */
+.Toastify__toast--warning {
+    background-color: #ff9800 !important;
+}
+
+.my-custom-toast {
+    background-color: purple !important;
+    color: white !important;
+}
