@@ -26,10 +26,6 @@ function Form() {
         const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-        console.log("VITE_EMAILJS_SERVICE_ID:", serviceId);
-        console.log("VITE_EMAILJS_TEMPLATE_ID:", templateId);
-        console.log("VITE_EMAILJS_PUBLIC_KEY:", publicKey);
-
         // Verificação básica para garantir que as variáveis foram carregadas
         if (!serviceId || !templateId || !publicKey) {
             toast.error('💥 Erro: Chaves de API não configuradas corretamente.', {
