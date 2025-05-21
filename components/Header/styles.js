@@ -12,7 +12,7 @@ export const Conteiner = styled.div`
 div {
 
   position: relative;
-  margin-right: 25%;
+  
   
   
 
@@ -20,6 +20,7 @@ div {
     
     height: 45px;
     /* transition: 250ms all ease-in-out; */
+   
     
 
     

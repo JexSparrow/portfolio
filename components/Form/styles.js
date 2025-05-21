@@ -73,12 +73,19 @@ max-width: 80%;
 border-radius: 25px;
 transition: 300ms all ease-in-out;
 box-shadow: rgba(1, 255, 254, 0.5) 0px 0px 50px -5px;
+opacity: 0;
+    transform: translateY(50px) scale(0.5);
 
 &:hover {
     scale: 0.95;
     box-shadow: rgba(0, 51, 255, 0.65) 0px 0px 50px -5px;
    
 }
+
+${props => props.$isVisible && css`
+          animation: ${fadeInUpAndScale} 1.5s ease-out forwards;
+          animation-delay: 300ms;
+        `}
 
 
 div {
@@ -135,6 +142,7 @@ transition: 300ms all ease-in-out;
   
   
 }
+
 
 
 

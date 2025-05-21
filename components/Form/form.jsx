@@ -17,6 +17,8 @@ function Form() {
     const formEmailRef = useRef();
     const titleRef = useRef(null);
     const [titleIsVisible, setTitleIsVisible] = useState(false);
+    const formBoxRef = useRef(null);
+    const [formBoxIsVisible, setFormBoxIsVisible] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -87,6 +89,7 @@ function Form() {
         // Captura os valores atuais dos refs no início do efeito
         // Isso resolve o aviso do ESLint sobre refs em funções de cleanup
         const currentTitleRef = titleRef.current;
+        const currentFormBoxRef = formBoxRef.current;
 
 
         // Observer para o h1
@@ -102,14 +105,32 @@ function Form() {
             { threshold: 1 } // Sugestão para teste: anima com 10% visível
         );
 
+        // Observer para o formBox
+        const formBoxObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setFormBoxIsVisible(true);
+                        formBoxObserver.unobserve(entry.target); // Para disparar a animação apenas uma vez
+                    }
+                });
+            },
+            { threshold: 0.1 } // Sugestão para teste: anima com 10% visível
+        );
+
         if (currentTitleRef) {
             titleObserver.observe(currentTitleRef);
+        }
+
+        if (currentFormBoxRef) {
+            formBoxObserver.observe(currentFormBoxRef);
         }
 
 
         // Cleanup function para desconectar os observers quando o componente desmontar
         return () => {
             if (currentTitleRef) titleObserver.unobserve(currentTitleRef);
+            if (currentFormBoxRef) formBoxObserver.unobserve(currentFormBoxRef);
 
         };
     }, []); // As dependências estão vazias porque os observers e refs não mudam entre renderizações
@@ -123,7 +144,7 @@ function Form() {
 
 
             <Title ref={titleRef} $isVisible={titleIsVisible}>Entre em Contato</Title>
-            <FormBox>
+            <FormBox ref={formBoxRef} $isVisible={formBoxIsVisible}>
                 <Formulario ref={formEmailRef} onSubmit={sendEmail}>
                     <div>
                         <Label>Nome</Label>
