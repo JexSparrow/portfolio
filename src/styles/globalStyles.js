@@ -17,6 +17,7 @@ button , a {
 
 html, body {
   scroll-behavior: smooth;
+  
 }
 
 `
