@@ -182,13 +182,13 @@ export const DivTop = styled.div`
     border-radius: 50%;
     z-index: 1;
     pointer-events: auto;
-    box-shadow: rgba(0, 150, 158, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 150, 158, 0.56) 0px -10px 70px 20px;
     transition: 250ms box-shadow ease-in-out, 250ms scale ease-in-out;
     transform: translateX(100%);
     opacity: 0;
 
     &:hover {
-      box-shadow: rgba(251, 255, 0, 0.83) 0px 0px 300px 4px;
+      box-shadow: rgba(251, 255, 0, 0.83) 0px 0px 150px 10px;
       scale: 0.98;
     }
 

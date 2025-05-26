@@ -1,16 +1,18 @@
 import styled, { keyframes, css } from "styled-components";
 
-// Keyframes para o conteúdo vindo da esquerda
 const slideInLeft = keyframes`
   from {
-    transform: translateX(-100%); /* Começa 100% fora da tela à esquerda */
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
     opacity: 0;
   }
   to {
-    transform: translateX(0); /* Termina na posição original */
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
 `;
+
 
 // Keyframe para o CarrosselContainer e Title tirar o blur e aparecer
 const fadeInBlur = keyframes`
@@ -52,6 +54,7 @@ export const Title = styled.h1`
   transition: 300ms all ease-in-out;
   transform: translateX(-100%);
   opacity: 0;
+  will-change: transform, opacity;
 
   ${props => props.$isVisible && css`
     animation: ${slideInLeft} 2s ease-out forwards;
@@ -62,13 +65,18 @@ export const Title = styled.h1`
     scale: 1.05;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     font-size: 2.5em;
     letter-spacing: 3px;
+    transform: none;
+    
   }
   @media (max-width: 500px){
     font-size: 1.8em;
     letter-spacing: 2px;
+        transform: none;
+
+    
   }
 
   

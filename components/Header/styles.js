@@ -198,6 +198,17 @@ export const Conteiner = styled.div`
     min-height: 60px;
     padding: 8px 15px;
   }
+
+  .desktop-download-cv {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 650px) {
+    display: none !important;
+  }
+}
 `;
 
 // Seu LogoWrapper existente
@@ -295,6 +306,7 @@ export const Download = styled.img`
 
   &:hover {
     filter: brightness(1.2);
+    scale: 1.15;
   }
 
   @media (max-width: 1024px) {
@@ -302,10 +314,4 @@ export const Download = styled.img`
   }
 `;
 
-// Ajuste para o contêiner do Download CV no desktop
-// .desktop-download-cv {
-//   display: flex;
-//   @media (max-width: 650px) {
-//     display: none !important;
-//   }
-// }
+

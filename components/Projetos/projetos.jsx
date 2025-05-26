@@ -58,7 +58,7 @@ function Projetos() {
                     }
                 });
             },
-            { threshold: 0.5 } // Sugestão para teste: anima com 10% visível
+            { threshold: 0.1 } // Sugestão para teste: anima com 10% visível
         );
 
         // Observer para o CarrosselContainer

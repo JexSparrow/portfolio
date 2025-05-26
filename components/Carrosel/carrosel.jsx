@@ -49,7 +49,7 @@ function Carrosel() {
                     }
                 });
             },
-            { threshold: 0.5 }
+            { threshold: 0.1 }
         );
 
         const carrosselObserver = new IntersectionObserver(
@@ -117,9 +117,7 @@ function Carrosel() {
                     <CarrosselWrapper
                         ref={wrapperRef}
                         style={{ transform: `translateX(${scrollPosition}px)` }}
-                    // !!! REMOVA totalWidth={200} AQUI !!!
-                    // A largura do wrapper será definida no styles.js para 200%
-                    // totalWidth={200} // <-- REMOVA ESTA LINHA!
+
                     >
                         {tecnologiasDuplicadas.map((tec, index) => (
                             <Slide
