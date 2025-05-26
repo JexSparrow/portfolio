@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const Conteiner = styled.div`
   background-color: rgba(144, 4, 204, 0.50); /* Escolha suas cores e direção */
   backdrop-filter: blur(5px); /* Ajuste o valor do blur conforme desejado */
-  height: 7vh; /* Altura padrão para desktop */
+  height: 8vh; /* Altura padrão para desktop */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  box-shadow: #01FFFE 0px 0px 50px -10px;
+  box-shadow: #01FFFE 0px 0px 50px -10px,
+    #01FFFE 0px 10px 30px -5px inset;
 
   // Media Query para telas menores que 1000px
   @media (max-width: 1000px) {
@@ -43,6 +44,18 @@ export const Paragrafo = styled.p`
   font-weight: 500;
   text-align: center; /* Garante que o texto seja centralizado em telas menores */
   white-space: nowrap; /* Evita que o texto quebre em várias linhas por padrão */
+
+  span {
+    color: #01FFFE ;
+     font-family: 'Orbitron', sans-serif;
+     transition: 300ms all ease-in-out;
+
+     &:hover {
+      color: yellow;
+     }
+  }
+
+ 
 
   // Media Query para telas menores que 1000px
   @media (max-width: 1000px) {

@@ -144,7 +144,9 @@ function Form() {
 
 
             <Title ref={titleRef} $isVisible={titleIsVisible}>Entre em Contato</Title>
+
             <FormBox ref={formBoxRef} $isVisible={formBoxIsVisible}>
+
                 <Formulario ref={formEmailRef} onSubmit={sendEmail}>
                     <div>
                         <Label>Nome</Label>

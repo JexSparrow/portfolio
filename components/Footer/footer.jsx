@@ -6,7 +6,7 @@ function Footer() {
     return (
         <>
             <Conteiner>
-                <Paragrafo>Desenvolvido por Jeferson Santos, 2025 @Todos Direitos Reservados</Paragrafo>
+                <Paragrafo>Desenvolvido por <span>Jeferson Santos</span>, 2025 @Todos Direitos Reservados</Paragrafo>
             </Conteiner>
         </>
     )

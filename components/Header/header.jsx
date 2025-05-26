@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
     Conteiner,
     Download,
@@ -16,6 +16,7 @@ import curriculo from '../../src/assets/curriculo.pdf';
 
 function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const homeRef = useRef(null);
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
@@ -24,6 +25,12 @@ function Header() {
     const closeSidebar = () => {
         setIsSidebarOpen(false);
     };
+
+    useEffect(() => {
+        if (homeRef.current) {
+            homeRef.current.id = 'home'; // Defina o ID da seção de home
+        }
+    }, []);
 
     return (
         <>
@@ -45,7 +52,7 @@ function Header() {
                 </LogoWrapper>
 
                 {/* Links para desktop */}
-                <Link href="#home">Home</Link>
+                <Link ref={homeRef}>Home</Link>
                 <Link href="https://github.com/JexSparrow" target="blank">Github</Link>
                 <Link href="#projetos">Projetos</Link>
                 <Link href="#contato">Contato</Link>

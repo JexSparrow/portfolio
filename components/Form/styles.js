@@ -36,11 +36,11 @@ export const Conteiner = styled.div`
   background-color: rgba(0, 0, 0, 0.85);
   height: 100%; /* Considerar min-height se o conteúdo for dinâmico */
   display: flex;
-  gap: 25px;
+  gap: 50px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px 0;
+  padding: 50px 0;
   box-shadow: -1px -13px 22px 15px rgba(0, 0, 0, 0.95),
               1px 7px 18px 11px rgba(0, 0, 0, 0.95) inset;
 
@@ -51,13 +51,13 @@ export const Conteiner = styled.div`
   }
 
   @media (max-width: 650px) {
-    padding: 15px 0;
-    gap: 15px;
+    padding: 30px 0;
+    gap: 30px;
   }
 
-  @media (max-width: 480px) {
-    padding: 10px 0;
-    gap: 10px;
+  @media (max-width: 500px) {
+    padding: 50px 20px;
+    gap: 40px;
   }
 `;
 
@@ -156,9 +156,10 @@ export const FormBox = styled.div`
   }
 
   @media (max-width: 480px) {
+    padding: 10px 0;
     min-width: 90%; /* Ocupa quase toda a largura em smartphones */
-    max-width: 98%;
-    border-radius: 15px; /* Bordas um pouco menos arredondadas */
+    max-width: 100%;
+    border-radius: 10px; /* Bordas um pouco menos arredondadas */
   }
 `;
 
@@ -176,7 +177,7 @@ export const Formulario = styled.form`
 
   @media (max-width: 480px) {
     padding: 10px 15px;
-    gap: 10px;
+    gap: 15px;
   }
 `;
 
