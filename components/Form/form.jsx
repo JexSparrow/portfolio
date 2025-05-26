@@ -102,7 +102,7 @@ function Form() {
                     }
                 });
             },
-            { threshold: 1 } // Sugestão para teste: anima com 10% visível
+            { threshold: 0.8 } // Sugestão para teste: anima com 10% visível
         );
 
         // Observer para o formBox
@@ -178,8 +178,14 @@ function Form() {
                 <img src={whatsapp} />
             </Whatsapp>
 
-            <Arrow href="#home">
-                <img src={arrowup} />
+            <Arrow
+                href="#home"
+                onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+            >
+                <img src={arrowup} alt="Voltar ao topo" />
             </Arrow>
 
             <ToastContainer />

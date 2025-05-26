@@ -19,7 +19,7 @@ export const Conteiner = styled.div`
 
   // Media Query para telas menores que 650px
   @media (max-width: 650px) {
-    height: 9vh;
+    height: 7vh;
     flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se não couberem */
     justify-content: center; /* Centraliza os itens quando quebrarem */
     gap: 10px; /* Adiciona um pequeno espaçamento entre os itens */
@@ -29,7 +29,7 @@ export const Conteiner = styled.div`
   // Media Query para telas menores que 480px (smartphones)
   @media (max-width: 480px) {
     height: auto; /* Altura automática para se adaptar ao conteúdo */
-    min-height: 10vh; /* Garante uma altura mínima */
+    min-height: 6vh; /* Garante uma altura mínima */
     flex-direction: column; /* Coloca os parágrafos um abaixo do outro */
     justify-content: center;
     gap: 5px; /* Reduz o espaçamento entre os parágrafos */
@@ -71,8 +71,7 @@ export const Paragrafo = styled.p`
 
   // Media Query para telas menores que 480px
   @media (max-width: 480px) {
-    font-size: 14px; /* Tamanho ideal para smartphones */
-    margin: 5px 0; /* Adiciona margem vertical quando em coluna */
+    font-size: 9px; /* Tamanho ideal para smartphones */
     line-height: 1.3; /* Melhora a legibilidade em várias linhas */
   }
 `;

@@ -82,7 +82,7 @@ export const Title = styled.h2`
 
   // Media Queries para responsividade
   @media (max-width: 1000px) {
-    font-size: 40px;
+    font-size: 42px;
     letter-spacing: 2px;
     text-shadow: 1.5px 1.5px 0.5px #ff005e, 2.5px 2.5px 0.5px #00d4ff;
     transform: translateY(40px) scale(0.6); 
@@ -93,7 +93,8 @@ export const Title = styled.h2`
   }
 
   @media (max-width: 650px) {
-    font-size: 30px;
+    font-size: 34px;
+    padding-bottom: 6px;
     letter-spacing: 1.5px;
     text-shadow: 1px 1px 0.5px #ff005e, 2px 2px 0.5px #00d4ff;
     transform: translateY(30px) scale(0.7); 
@@ -104,6 +105,7 @@ export const Title = styled.h2`
   }
 
   @media (max-width: 480px) {
+    padding-bottom: 8px;
     font-size: 24px;
     letter-spacing: 1px;
     text-shadow: 0.8px 0.8px 0.3px #ff005e, 1.5px 1.5px 0.3px #00d4ff;

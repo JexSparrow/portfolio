@@ -181,6 +181,7 @@ export const Slider = styled.div`
     animation: ${fadeInBlur} 2s ease-out forwards;
     animation-delay: 100ms;
   `}
+  
 `;
 
 export const SliderTrack = styled.div`
@@ -199,7 +200,7 @@ export const SliderTrack = styled.div`
   @media (max-width: 1000px) {
     ${({ $slideWidth = 250 }) => css` // Define a largura do slide para este breakpoint
       width: calc(${$slideWidth}px * 24);
-      animation: ${scroll} 20s linear infinite; // A duração pode ser a mesma ou ajustada
+      animation: ${scroll} 24s linear infinite; // A duração pode ser a mesma ou ajustada
       
 
       // Redefinir a animação para o novo tamanho do slide
