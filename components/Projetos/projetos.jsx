@@ -120,7 +120,7 @@ function Projetos() {
 
             <Slider ref={sliderRef} $isVisible={sliderIsVisible}>
                 <SliderTrack style={{ animationPlayState: animacaoPausada ? 'paused' : 'running' }}>
-                    {projetosInfo.map((projeto, index) => (
+                    {[...projetosInfo, ...projetosInfo].map((projeto, index) => (
                         <Slide key={index}>
                             <img
                                 src={projeto.src}

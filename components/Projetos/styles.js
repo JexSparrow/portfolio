@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
+import { projetosInfo } from '../../src/utils/projetosInfo';
 
 const slideInLeft = keyframes`
   from {
@@ -46,13 +47,12 @@ export const BackgroundVideo = styled.video`
   filter: brightness(0.5);
 `;
 
-// ANIMAÇÃO SCROLL MANTIDA EXATAMENTE COMO VOCÊ PEDIU
 const scroll = keyframes`
   0% {
-    transform: translateX(calc(-300px * 12));
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(calc(65px * 24)); /* Mantenho 65px aqui, mas observe que a lógica de loop perfeito geralmente usa o mesmo valor do 'from' ou a largura total de um set de slides negativos */
+    transform: translateX(0%);
   }
 `;
 
@@ -146,7 +146,7 @@ export const Paragrafo = styled.p`
 `;
 
 export const Slider = styled.div`
-  width: 90%;
+  width: 100%;
   height: 45vh;
   margin: auto;
   position: relative;
@@ -181,119 +181,84 @@ export const Slider = styled.div`
     animation: ${fadeInBlur} 2s ease-out forwards;
     animation-delay: 100ms;
   `}
-  
 `;
 
 export const SliderTrack = styled.div`
   display: flex;
-  // Largura padrão para desktop (24 slides de 300px)
-  width: calc(300px * 24);
-  animation: ${scroll} 24s linear infinite; // Animação padrão para desktop
- 
+  /* Ajuste a largura base do SliderTrack para que os slides fiquem mais próximos */
+  width: calc(350px * ${projetosInfo.length * 2}); /* Diminuído de 450px para 350px */
+  animation: ${scroll} 40s linear infinite;
 
-  // ============== Media Queries para o SliderTrack e Animação ==============
-
-  // Defina uma variável local para a largura do slide em cada breakpoint
-  // Assim, você usa o mesmo valor para 'width' e para o cálculo da animação.
-  
-  // Para telas menores que 1000px
   @media (max-width: 1000px) {
-    ${({ $slideWidth = 250 }) => css` // Define a largura do slide para este breakpoint
-      width: calc(${$slideWidth}px * 24);
-      animation: ${scroll} 24s linear infinite; // A duração pode ser a mesma ou ajustada
-      
-
-      // Redefinir a animação para o novo tamanho do slide
-      @keyframes ${scroll} {
-        0% {
-           transform: translateX(calc(-${$slideWidth}px * 12)); 
-          }
-        100% { transform: translateX(50px * 24);
-         }
-      }
-    `}
+    width: calc(300px * ${projetosInfo.length * 2}); /* Diminuído de 375px para 300px */
   }
 
-  // Para telas menores que 650px
   @media (max-width: 650px) {
-    ${({ $slideWidth = 200 }) => css` // Define a largura do slide para este breakpoint
-      width: calc(${$slideWidth}px * 24);
-      animation: ${scroll} 25s linear infinite; // Ajustei a duração para um pouco mais rápido para slides menores
-      
-
-      // Redefinir a animação para o novo tamanho do slide
-      @keyframes ${scroll} {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-${$slideWidth}px * 12)); }
-      }
-    `}
+    width: calc(250px * ${projetosInfo.length * 2}); /* Diminuído de 300px para 250px */
   }
 
-  // Para telas menores que 480px
   @media (max-width: 480px) {
-    ${({ $slideWidth = 150 }) => css` // Define a largura do slide para este breakpoint
-      width: calc(${$slideWidth}px * 24);
-      animation: ${scroll} 30s linear infinite; // Ajustei a duração para ser mais rápido
-      
-
-      // Redefinir a animação para o novo tamanho do slide
-      @keyframes ${scroll} {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-${$slideWidth}px * 12)); }
-      }
-    `}
+    width: calc(180px * ${projetosInfo.length * 2}); /* Diminuído de 225px para 180px */
   }
 `;
 
 export const Slide = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  width: 300px; /* Largura padrão do slide para desktop */
-  padding: 15px;
-  perspective: 100px;
-  cursor: pointer;
   flex-shrink: 0;
+  /* Ajuste a largura de cada Slide individualmente */
+  width: 350px; /* Diminuído de 450px para 350px */
 
-  // Ajustes para o tamanho do Slide e Imagem em telas menores
   @media (max-width: 1000px) {
-    width: 250px; /* O slide terá 250px de largura */
-    height: 180px;
-    padding: 12px;
-    img {
-      width: 65%; /* A imagem dentro do slide será 65% da nova largura do slide */
-    }
+    width: 300px; /* Diminuído de 375px para 300px */
   }
 
   @media (max-width: 650px) {
-    width: 200px; /* O slide terá 200px de largura */
-    height: 150px;
-    padding: 10px;
-    img {
-      width: 50%; /* A imagem dentro do slide será 50% da nova largura do slide */
-    }
-  }
-  
-  @media (max-width: 480px) { /* Exemplo para telas ainda menores (celulares) */
-    width: 150px; /* O slide terá 150px de largura */
-    height: 120px;
-    padding: 8px;
-    img {
-      width: 40%; /* A imagem será 40% da largura do slide */
-    }
+    width: 250px; /* Diminuído de 300px para 250px */
   }
 
-  // Estilo da imagem dentro do Slide para desktop (padrão)
+  @media (max-width: 480px) {
+    width: 180px; /* Diminuído de 225px para 180px */
+  }
+
+
   img {
-    width: 75%; /* Padrão desktop */
-    transition: transform 1s;
+    /* Ajustes para as imagens dentro do slide */
+    height: 200px; /* **Aumentado para que as imagens fiquem maiores em desktop** */
+    width: auto; /* Mantém a proporção */
+    max-width: 260px; /* **Aumentado para que as imagens fiquem maiores em desktop** */
+    object-fit: contain; /* Garante que a imagem caiba sem cortar, mantendo a proporção */
+    cursor: pointer;
+    transition: 150ms all ease-in-out;
+    display: block; /* Garante que o img se comporte como um bloco para o margin: auto */
+    margin: 0 auto; /* Centraliza a imagem dentro do Slide */
+    transition: 300ms all ease-in-out;
+
+    &:hover {
+
+      scale: 1.1;
+
+    }
+
+    @media (max-width: 1500px){
+      height: 140px;
+      max-width: 200px;
+    }
+
+    @media (max-width: 1000px) { /* Adicionado este breakpoint específico para imagem */
+      height: 120px;
+      max-width: 160px;
+    }
+
+    @media (max-width: 650px){
+      height: 90px;
+      max-width: 120px;
+    }
+
+    @media (max-width: 500px){
+      height: 80px;
+      max-width: 120px;
+    }
   }
 
-  & img:hover {
-    transform: translateZ(20px);
-  }
 `;
 
 export const ProjetoDetalhesContainer = styled.div`
@@ -325,25 +290,22 @@ export const ConteinerVideoInfos = styled.div`
               0px 0px 20px 0px #01FFFE;
 
   @media (max-width: 1000px){
-
     flex-direction: column;
     height: auto;
     padding: 1%;
-    
   }
-  `;
+`;
 
 export const ConteinerVideo = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  width: 100%;
+  height: 100%;
 
-width: 100%;
-height: 100%;
-
-h3 {
+  h3 {
     font-family: 'Tektur';
     font-size: 40px;
     text-align: center;
@@ -352,17 +314,14 @@ h3 {
     letter-spacing: 2px;
     transition: 250ms all ease-in-out;
 
-  &:hover {
-    color: #01FFFE;
-    scale: 0.95;
-  }
+    &:hover {
+      color: #01FFFE;
+      scale: 0.95;
+    }
 
-  @media (max-width: 1000px){
-
+    @media (max-width: 1000px){
       display: none;
-    
-  }
-
+    }
   }
 
   iframe {
@@ -371,41 +330,27 @@ h3 {
     width: 100%; /* Padrão para desktop */
     height: 400px; /* Padrão para desktop */
 
-     @media (max-width: 1000px){
-
+    @media (max-width: 1000px){
       height: 270px;
       width: 60%;
-  
-  }
+    }
 
-   @media (max-width: 800px){
-
+    @media (max-width: 800px){
       height: 220px;
       width: 60%;
-    
+    }
 
-  }
-
-   @media (max-width: 650px){
-
+    @media (max-width: 650px){
       height: 220px;
       width: 70%;
-    
-    
-  }
+    }
 
-  
-   @media (max-width: 500px){
-
+    @media (max-width: 500px){
       height: 180px;
       width: 90%;
-    
-    
+    }
   }
-  }
- 
-  
-  `;
+`;
 
 export const ProjetoDetalhes = styled.div`
   height: 100%;
@@ -425,11 +370,9 @@ export const ProjetoDetalhes = styled.div`
   }
 
   img {
-    
-    height: 76px;
+    height: 76px; /* Altura padrão para desktop */
     cursor: pointer;
     transition: 150ms all ease-in-out;
-
 
     @media (max-width: 1500px){
       height: 50px;
@@ -449,9 +392,7 @@ export const ProjetoDetalhes = styled.div`
   }
 
   > div {
-    
     h3 {
-      
       @media (max-width: 1000px){
         font-size: 1em;
       }
@@ -515,7 +456,7 @@ export const ProjetoDescricao = styled.p`
   font-family: 'Anta';
   margin-bottom: 10px; /* Espaçamento padrão */
 
-   @media (max-width: 1450px) {
+  @media (max-width: 1450px) {
     font-size: 1.1em;
     line-height: 120%; /* Aumenta o line-height para melhor leitura em telas menores */
     margin-bottom: 4px;
