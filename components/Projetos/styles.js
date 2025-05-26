@@ -306,6 +306,7 @@ export const ProjetoDetalhesContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 10;
+  padding: 10px; /* Adiciona um padding para não colar nas bordas em telas pequenas */
 `;
 
 export const ConteinerVideoInfos = styled.div`
@@ -331,12 +332,57 @@ export const ConteinerVideoInfos = styled.div`
   iframe {
     border: none;
     box-shadow: rgba(0, 255, 238, 0.51) 0px 0px 100px -20px;
+    width: 60%; /* Padrão para desktop */
+    height: 90%; /* Padrão para desktop */
+  }
+
+  // Media Query para 1000px: Muda para coluna, diminui o iframe
+  @media (max-width: 1000px) {
+    flex-direction: column; /* Coloca o vídeo e as infos em coluna */
+    height: auto; /* Altura automática para se adaptar ao conteúdo */
+    max-height: 95vh; /* Limita a altura máxima */
+    overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+    padding: 2%; /* Ajusta o padding */
+    width: 90%; /* Aumenta um pouco a largura para melhor aproveitamento */
+    
+    iframe {
+      width: 90%; /* Aumenta a largura do iframe para preencher mais */
+      height: 300px; /* Fixa uma altura menor para o vídeo */
+      margin-bottom: 20px; /* Espaço entre o vídeo e as infos */
+    }
+  }
+
+  // Media Query para 650px: Iframe menor ou opcionalmente esconder
+  @media (max-width: 650px) {
+    width: 95%; /* Quase total da tela */
+    padding: 3%;
+    gap: 1%; /* Reduz o gap */
+
+    iframe {
+      width: 95%; /* Ocupa quase toda a largura disponível */
+      height: 200px; /* Ainda menor */
+      margin-bottom: 15px;
+    }
+  }
+
+  // Media Query para 480px: Iframe ainda menor ou escondido
+  @media (max-width: 480px) {
+    width: 98%;
+    padding: 4%;
+    gap: 0.5%;
+
+    iframe {
+      width: 100%;
+      height: 180px; /* Altura mínima para o iframe */
+      /* display: none; */ /* Opcional: descomente para esconder o iframe em telas muito pequenas */
+      margin-bottom: 10px;
+    }
   }
 `;
 
 export const ProjetoDetalhes = styled.div`
   height: 100%;
-  max-width: 50%;
+  max-width: 50%; /* Padrão para desktop */
   color: wheat;
   position: relative;
   display: flex;
@@ -359,45 +405,113 @@ export const ProjetoDetalhes = styled.div`
   & img:hover {
     scale: 1.1;
   }
+
+  // Media Query para 1000px: Ocupa mais espaço em coluna
+  @media (max-width: 1000px) {
+    max-width: 95%; /* Ocupa quase toda a largura quando em coluna */
+    height: auto; /* Altura automática */
+    gap: 2%; /* Reduz o gap entre os elementos internos */
+  }
+
+  // Media Query para 650px
+  @media (max-width: 650px) {
+    gap: 1.5%;
+  }
+
+  // Media Query para 480px
+  @media (max-width: 480px) {
+    gap: 1%;
+  }
 `;
 
 export const ProjetoTitulo = styled.h2`
-  font-size: 2.75em;
+  font-size: 2.75em; /* Padrão para desktop */
   font-family: 'Orbitron';
   letter-spacing: 2px;
   transition: 250ms all ease-in-out;
 
-
   &:hover {
     color: yellow;
+  }
+
+  // Media Query para 1000px
+  @media (max-width: 1000px) {
+    font-size: 2.2em; /* Diminui a fonte */
+    margin-bottom: 10px; /* Adiciona um espaço */
+  }
+
+  // Media Query para 650px
+  @media (max-width: 650px) {
+    font-size: 1.8em;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  // Media Query para 480px
+  @media (max-width: 480px) {
+    font-size: 1.4em;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
   }
 `;
 
 export const ProjetoDescricao = styled.p`
-  line-height: 95%;
+  line-height: 95%; /* Padrão para desktop */
   text-align: left;
   white-space: pre-line;
-  font-size: 1.4em;
+  font-size: 1.4em; /* Padrão para desktop */
   font-family: 'Anta';
+  margin-bottom: 10px; /* Espaçamento padrão */
 
+  // Media Query para 1000px
+  @media (max-width: 1000px) {
+    font-size: 1.1em;
+    line-height: 120%; /* Aumenta o line-height para melhor leitura em telas menores */
+    margin-bottom: 8px;
+  }
 
+  // Media Query para 650px
+  @media (max-width: 650px) {
+    font-size: 0.95em;
+    line-height: 130%;
+    margin-bottom: 6px;
+  }
+
+  // Media Query para 480px
+  @media (max-width: 480px) {
+    font-size: 0.85em;
+    line-height: 140%;
+    margin-bottom: 4px;
+  }
 `;
 
 export const ProjetoLink = styled.a`
   font-family: 'Oxanium';
-  font-size: 30px;
+  font-size: 30px; /* Padrão para desktop */
   color: aliceblue;
   text-decoration: none;
   font-weight: bold;
   transition: 200ms all ease-in-out;
   margin: 0 auto;
 
-  &:hover {
-    scale: 1.15;
-    color: #01FFFE;
+  &:hover { scale: 1.15; color: #01FFFE; }
+  &:active { scale: 0.90; }
+
+  // Media Query para 1000px
+  @media (max-width: 1000px) {
+    font-size: 24px;
+    margin-top: 10px; /* Adiciona um pouco de espaço acima */
   }
 
-  &:active {
-    scale: 0.90;
+  // Media Query para 650px
+  @media (max-width: 650px) {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+
+  // Media Query para 480px
+  @media (max-width: 480px) {
+    font-size: 16px;
+    margin-top: 5px;
   }
 `;
