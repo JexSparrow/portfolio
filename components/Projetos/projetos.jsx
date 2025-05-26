@@ -1,4 +1,4 @@
-import { BackgroundVideo, BoxTitle, Conteiner, ConteinerVideoInfos, Paragrafo, ProjetoDescricao, ProjetoDetalhes, ProjetoDetalhesContainer, ProjetoLink, ProjetoTitulo, Slide, Slider, SliderTrack, Title } from "./styles";
+import { BackgroundVideo, BoxTitle, Conteiner, ConteinerVideo, ConteinerVideoInfos, Paragrafo, ProjetoDescricao, ProjetoDetalhes, ProjetoDetalhesContainer, ProjetoLink, ProjetoTitulo, Slide, Slider, SliderTrack, Title } from "./styles";
 import astro from '../../src/assets/astro.mp4'
 import { projetosInfo } from "../../src/utils/projetosInfo";
 import { useState, useRef, useEffect, useCallback } from "react";
@@ -137,8 +137,8 @@ function Projetos() {
 
                     <ConteinerVideoInfos>
                         {projetoSelecionado.videoId && (
-                            <div>
-                                <h3 style={{ textAlign: 'center', color: 'wheat', fontSize: '40px' }}>Vídeo de Demonstração</h3>
+                            <ConteinerVideo>
+                                <h3>Vídeo de Demonstração</h3>
                                 <iframe
                                     style={{ borderRadius: "25px" }}
                                     width="720"
@@ -148,15 +148,17 @@ function Projetos() {
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
                                 ></iframe>
-                            </div>
+                            </ConteinerVideo>
                         )}
 
                         <ProjetoDetalhes ref={modalRef}>
 
                             <ProjetoTitulo>{projetoSelecionado.titulo}</ProjetoTitulo>
                             <ProjetoDescricao>{projetoSelecionado.descricao}</ProjetoDescricao>
+
                             <div>
                                 <h3>{projetoSelecionado.tecnologias}</h3>
+
                                 <div style={{ display: 'flex', gap: '10px', marginTop: '10px', justifyContent: 'center' }}>
                                     {projetoSelecionado.img && projetoSelecionado.img.map((imgSrc, index) => (
                                         <img key={index} src={imgSrc} alt={`Tecnologia ${index + 1}`} />

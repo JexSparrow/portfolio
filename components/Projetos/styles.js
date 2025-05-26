@@ -311,7 +311,7 @@ export const ProjetoDetalhesContainer = styled.div`
 
 export const ConteinerVideoInfos = styled.div`
   width: 95%;
-  height: 88vh;
+  height: 85%;
   border-radius: 25px;
   background-color: rgba(144, 4, 204, 0.38);
   backdrop-filter: blur(5px);
@@ -323,66 +323,92 @@ export const ConteinerVideoInfos = styled.div`
   box-shadow: #01FFFE 0px 0px 70px -20px inset,
               0px 0px 20px 0px #01FFFE;
 
-  h3 {
+  @media (max-width: 1000px){
+
+    flex-direction: column;
+    height: auto;
+    padding: 1%;
+    
+  }
+  `;
+
+export const ConteinerVideo = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 2%;
+
+width: 100%;
+height: 100%;
+
+h3 {
     font-family: 'Tektur';
-    margin-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 2%;
     letter-spacing: 2px;
+    transition: 250ms all ease-in-out;
+
+  &:hover {
+    color: #01FFFE;
+    scale: 0.95;
+  }
+
+  @media (max-width: 1000px){
+
+      display: none;
+    
+  }
+
   }
 
   iframe {
     border: none;
     box-shadow: rgba(0, 255, 238, 0.51) 0px 0px 100px -20px;
-    width: 60%; /* Padrão para desktop */
-    height: 90%; /* Padrão para desktop */
+    width: 100%; /* Padrão para desktop */
+    height: 400px; /* Padrão para desktop */
+
+     @media (max-width: 1000px){
+
+      height: 270px;
+      width: 60%;
+  
   }
 
-  // Media Query para 1000px: Muda para coluna, diminui o iframe
-  @media (max-width: 1000px) {
-    flex-direction: column; /* Coloca o vídeo e as infos em coluna */
-    height: auto; /* Altura automática para se adaptar ao conteúdo */
-    max-height: 95vh; /* Limita a altura máxima */
-    overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
-    padding: 2%; /* Ajusta o padding */
-    width: 90%; /* Aumenta um pouco a largura para melhor aproveitamento */
+   @media (max-width: 800px){
+
+      height: 220px;
+      width: 60%;
     
-    iframe {
-      width: 90%; /* Aumenta a largura do iframe para preencher mais */
-      height: 300px; /* Fixa uma altura menor para o vídeo */
-      margin-bottom: 20px; /* Espaço entre o vídeo e as infos */
-    }
+
   }
 
-  // Media Query para 650px: Iframe menor ou opcionalmente esconder
-  @media (max-width: 650px) {
-    width: 95%; /* Quase total da tela */
-    padding: 3%;
-    gap: 1%; /* Reduz o gap */
+   @media (max-width: 650px){
 
-    iframe {
-      width: 95%; /* Ocupa quase toda a largura disponível */
-      height: 200px; /* Ainda menor */
-      margin-bottom: 15px;
-    }
+      height: 220px;
+      width: 70%;
+    
+    
   }
 
-  // Media Query para 480px: Iframe ainda menor ou escondido
-  @media (max-width: 480px) {
-    width: 98%;
-    padding: 4%;
-    gap: 0.5%;
+  
+   @media (max-width: 500px){
 
-    iframe {
-      width: 100%;
-      height: 180px; /* Altura mínima para o iframe */
-      /* display: none; */ /* Opcional: descomente para esconder o iframe em telas muito pequenas */
-      margin-bottom: 10px;
-    }
+      height: 180px;
+      width: 90%;
+    
+    
   }
-`;
+  }
+ 
+  
+  `;
 
 export const ProjetoDetalhes = styled.div`
   height: 100%;
-  max-width: 50%; /* Padrão para desktop */
+  max-width: 55%; /* Padrão para desktop */
   color: wheat;
   position: relative;
   display: flex;
@@ -400,10 +426,33 @@ export const ProjetoDetalhes = styled.div`
     height: 76px;
     cursor: pointer;
     transition: 150ms all ease-in-out;
+
+
+    @media (max-width: 1500px){
+      height: 50px;
+    }
+
+    @media (max-width: 650px){
+      height: 30px;
+    }
+
+    @media (max-width: 500px){
+      height: 20px;
+    }
   }
 
   & img:hover {
     scale: 1.1;
+  }
+
+  > div {
+    
+    h3 {
+      
+      @media (max-width: 1000px){
+        font-size: 1em;
+      }
+    }
   }
 
   // Media Query para 1000px: Ocupa mais espaço em coluna
@@ -436,13 +485,13 @@ export const ProjetoTitulo = styled.h2`
 
   // Media Query para 1000px
   @media (max-width: 1000px) {
-    font-size: 2.2em; /* Diminui a fonte */
+    font-size: 1.8em; /* Diminui a fonte */
     margin-bottom: 10px; /* Adiciona um espaço */
   }
 
   // Media Query para 650px
   @media (max-width: 650px) {
-    font-size: 1.8em;
+    font-size: 1.6em;
     letter-spacing: 1px;
     margin-bottom: 8px;
   }
@@ -463,16 +512,22 @@ export const ProjetoDescricao = styled.p`
   font-family: 'Anta';
   margin-bottom: 10px; /* Espaçamento padrão */
 
+   @media (max-width: 1450px) {
+    font-size: 1.1em;
+    line-height: 120%; /* Aumenta o line-height para melhor leitura em telas menores */
+    margin-bottom: 4px;
+  }
+
   // Media Query para 1000px
   @media (max-width: 1000px) {
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 120%; /* Aumenta o line-height para melhor leitura em telas menores */
     margin-bottom: 8px;
   }
 
   // Media Query para 650px
   @media (max-width: 650px) {
-    font-size: 0.95em;
+    font-size: 0.90em;
     line-height: 130%;
     margin-bottom: 6px;
   }
