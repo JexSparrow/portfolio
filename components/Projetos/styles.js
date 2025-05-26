@@ -418,11 +418,13 @@ export const ProjetoDetalhes = styled.div`
   gap: 4%;
 
   h3 {
+    margin-top: 2%;
     font-family: 'Orbitron';
     font-size: 20px;
   }
 
   img {
+    
     height: 76px;
     cursor: pointer;
     transition: 150ms all ease-in-out;

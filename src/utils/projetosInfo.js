@@ -194,8 +194,6 @@ export const projetosInfo = [
         descricao: `Prepare-se para uma viagem no tempo inesquecível! 
         
         Esta landing page te transporta diretamente para o universo vibrante e divertido de Mario e Luigi, com uma dose extra de profissionalismo encanador!
-        
-        Uma página interativa, totalmente responsiva para dispositivos móveis.
 
         Precisa de ajuda? É super fácil! Um botão convidativo te chama para entrar em contato, deslizando um formulário amigável na tela com uma animação nostálgica, pronto para receber sua solicitação. E para um atendimento ainda mais rápido, um atalho direto para o WhatsApp está sempre à mão!
         
