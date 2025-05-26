@@ -20,7 +20,7 @@ function App() {
               <span><Simbolo>&lt;</Simbolo> Front End Developer <Simbolo>/&gt;</Simbolo></span></h1>
 
             <DivParagrafo>
-              <p style={{ fontSize: '28px' }}>Olá! Tudo bom? Sejam Bem-Vindos!</p>
+              <p>Olá! Tudo bom? Sejam Bem-Vindos!</p>
               <p>Me chamo Jeferson e estou em transição de carreira para a área de tecnologia, trazendo comigo habilidades valiosas adquiridas ao longo da minha trajetória profissional.</p>
               <p>Atualmente, estou me especializando em desenvolvimento web por meio da formação DevClub, onde realizo projetos práticos utilizando <span> HTML</span> ,<span> CSS</span> ,<span> JavaScript</span>,<span> React</span>, <span> Node.js</span>,<span> PostgreSQL</span> e <span> MongoDB</span> .</p>
               <div>

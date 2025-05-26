@@ -34,6 +34,7 @@ export const BackgroundVideo = styled.video`
   object-fit: cover;
   pointer-events: none;
   filter: brightness(0.75);
+
 `;
 
 export const Conteiner = styled.div`
@@ -49,7 +50,6 @@ export const Conteiner = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: #01FFFE 0px -30px 60px -30px;
-
   
 `;
 
@@ -82,6 +82,10 @@ export const DivTop = styled.div`
     /* Garante que o DivTop se ajuste e permita rolagem se o conteúdo for muito grande */
     min-height: auto; /* Deixa a altura ser determinada pelo conteúdo */
     /* Remove a necessidade de height:100% que pode cortar conteúdo */
+  }
+
+   @media (max-width: 800px ){
+    padding: 12% 0;
   }
 
   > div { /* Estiliza o div interno que contém título e parágrafo */
@@ -169,7 +173,7 @@ export const DivTop = styled.div`
       font-size: 2.5rem;
     }
     @media (max-width: 768px) {
-      font-size: 2rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -211,6 +215,16 @@ export const DivParagrafo = styled.div`
   display: flex;
   flex-direction: column;
 
+   > p:first-of-type {
+        font-size: 28px;
+       
+
+        @media (max-width: 800px ){
+          display: none;
+        }
+   }
+
+
   span {
     font-size: 26px;
     color: #01FFFE;
@@ -222,10 +236,14 @@ export const DivParagrafo = styled.div`
     }
 
     @media (max-width: 1326px) {
+
+     
+
       font-size: 1.3rem;
     }
     @media (max-width: 768px) {
       font-size: 1rem;
+
     }
   }
 

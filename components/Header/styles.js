@@ -181,14 +181,10 @@ export const Conteiner = styled.div`
     height: auto;
     min-height: 80px;
     justify-content: space-around;
+    align-items: center;
     padding: 15px 10px;
   }
 
-  @media (max-width: 800px) {
-    justify-content: center;
-    flex-direction: row;
-    gap: 0;
-  }
 
   @media (max-width: 650px) {
     /* AGORA: Centralizar a LogoWrapper (jslogo) quando o hamburger é fixo */
@@ -301,7 +297,7 @@ export const Download = styled.img`
     filter: brightness(1.2);
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
