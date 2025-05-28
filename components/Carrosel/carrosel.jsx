@@ -10,18 +10,39 @@ import mongo from '../../src/assets/mongo.png';
 import node from '../../src/assets/node.png';
 import postgres from '../../src/assets/postgres.png';
 import react from '../../src/assets/react.png';
+import chatgpt from '../../src/assets/chatgpt.png';
+import api2 from '../../src/assets/api2.png';
+import vite from '../../src/assets/vite.png';
+import git from '../../src/assets/git.png';
+import github from '../../src/assets/github.png';
+import scrum from '../../src/assets/scrum.png';
+import kanban from '../../src/assets/kanban.png';
+import ux from '../../src/assets/ux.png';
 
 const tecnologias = [
     { nome: 'React', imagem: react },
+    { nome: 'Vite', imagem: vite },
     { nome: 'JavaScript', imagem: js },
     { nome: 'CSS', imagem: css3 },
     { nome: 'HTML', imagem: html },
-    { nome: 'Figma', imagem: figma },
-    { nome: 'Docker', imagem: docker },
     { nome: 'Node', imagem: node },
     { nome: 'Postgres', imagem: postgres },
     { nome: 'MongoDB', imagem: mongo },
+    { nome: 'Docker', imagem: docker },
+    { nome: 'APIs REST', imagem: api2 },
+    { nome: 'Git', imagem: git },
+    { nome: 'Github', imagem: github },
+    { nome: 'Figma', imagem: figma },
     { nome: 'Canva', imagem: canva },
+    { nome: 'UX/UI', imagem: ux },
+    { nome: 'Chat Gpt', imagem: chatgpt },
+    { nome: 'Scrum', imagem: scrum },
+    { nome: 'Kanban', imagem: kanban },
+
+
+
+
+
 ];
 
 function Carrosel() {
