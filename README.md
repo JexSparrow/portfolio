@@ -28,9 +28,8 @@ Explore meus projetos e veja como transformo ideias em realidade digital, com at
 
 ![Captura de tela 2025-06-20 180438](https://github.com/user-attachments/assets/c69caa44-5a6c-4538-8c1d-cc9d8ecacdbe)
 ![Captura de tela 2025-06-20 180505](https://github.com/user-attachments/assets/2ac8d23b-b4f7-48e7-8792-de7064f3b240)
-![Captura de tela 2025-06-20 180537](https://github.com/user-attachments/assets/dc62961c-446e-42f2-b5e1-aca453e65d5c)
+
 
 <b>LAYOUT TABLETS </b>
 
 ![Captura de tela 2025-06-20 180654](https://github.com/user-attachments/assets/e8b724e5-c790-4d74-b959-57d2c6509283)
-![Captura de tela 2025-06-20 180737](https://github.com/user-attachments/assets/e68c9fea-4479-47f1-9a90-d059c739def9)
