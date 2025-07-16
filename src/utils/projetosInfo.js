@@ -13,6 +13,8 @@ import DevBurguer from '../../src/assets/Logo.svg'
 import netflix from '../../src/assets/netflix.png'
 import clima from '../../src/assets/clima.png'
 import api from '../../src/assets/api.png'
+import chatgpt from '../../src/assets/chatgpt.png'
+import pastel from '../../src/assets/pastel.png'
 import starbucks from '../../src/assets/starbucks.png'
 import pig from '../../src/assets/pig.gif'
 import apple from '../../src/assets/apple.png'
@@ -203,5 +205,24 @@ export const projetosInfo = [
         tecnologias: "HTML, CSS E JAVASCRIPT",
         img: [html, css3, js],
         videoId: "deo4fPfZ_cw"
+    },
+    {
+        src: pastel,
+        alt: "Pastelaria-Kulik",
+        titulo: "Pastelaria Kulik",
+        descricao: `Encontre a Feira Mais Próxima e Mergulhe no Sabor Local
+
+        Nunca foi tão fácil nos encontrar!
+
+        Em nossa seção dedicada aos endereços, você terá acesso rápido e claro aos locais onde estamos prontos para te servir.
+
+        Além disso, confira nossos dias de feira, organizados de forma intuitiva para que você possa planejar sua visita e garantir seu pastel favorito.
+
+        Seja qual for o seu canto de Curitiba, estamos sempre por perto para melhorar seu dia.`,
+
+        link: "https://github.com/JexSparrow/Pastelaria",
+        tecnologias: "HTML, CSS-in-JS, JAVASCRIPT, REACT, SWIPPER E FRAMER MOTION",
+        img: [html, css3, js, react, chatgpt],
+        videoId: "DZAeVK-Xpt8"
     },
 ];

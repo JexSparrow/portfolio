@@ -31,8 +31,6 @@ function Header() {
             {/* Overlay para escurecer o fundo quando a sidebar está aberta */}
             {isSidebarOpen && <Overlay onClick={closeSidebar} />}
 
-            {/* Ícone Hamburger - AGORA FORA DO CONTEINER para melhor controle de z-index */}
-            {/* Posicionado fixo para sempre estar visível e clicável, mesmo com scroll */}
             <HamburgerIcon onClick={toggleSidebar} isOpen={isSidebarOpen}>
                 <div></div>
                 <div></div>

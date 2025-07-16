@@ -2,18 +2,18 @@ import { Arrow, BackgroundVideo, Button, Conteiner, FormBox, Formulario, Input, 
 import anomaly from '../../src/assets/anomaly.mp4';
 import whatsapp from '../../src/assets/whatsapp.png';
 import arrowup from '../../src/assets/arrowup.svg';
-import { useRef, useEffect, useState } from 'react'; // Importe useRef e useEffect
+import { useRef, useEffect, useState } from 'react';
 
 import emailjs from '@emailjs/browser';
 import { Slide, ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Importe os estilos CSS
-import './custom-toast.css'; // SEU CSS PERSONALIZADO (importar DEPOIS)
+import 'react-toastify/dist/ReactToastify.css';
+import './custom-toast.css';
 
 
 
 function Form() {
 
-    const formRef = useRef(null); // Crie uma ref para o container principal
+    const formRef = useRef(null);
     const formEmailRef = useRef();
     const titleRef = useRef(null);
     const [titleIsVisible, setTitleIsVisible] = useState(false);
@@ -86,8 +86,7 @@ function Form() {
     }, []);
 
     useEffect(() => {
-        // Captura os valores atuais dos refs no início do efeito
-        // Isso resolve o aviso do ESLint sobre refs em funções de cleanup
+
         const currentTitleRef = titleRef.current;
         const currentFormBoxRef = formBoxRef.current;
 
@@ -102,7 +101,7 @@ function Form() {
                     }
                 });
             },
-            { threshold: 0.8 } // Sugestão para teste: anima com 10% visível
+            { threshold: 0.8 }
         );
 
         // Observer para o formBox
@@ -111,11 +110,11 @@ function Form() {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         setFormBoxIsVisible(true);
-                        formBoxObserver.unobserve(entry.target); // Para disparar a animação apenas uma vez
+                        formBoxObserver.unobserve(entry.target);
                     }
                 });
             },
-            { threshold: 0.1 } // Sugestão para teste: anima com 10% visível
+            { threshold: 0.1 }
         );
 
         if (currentTitleRef) {

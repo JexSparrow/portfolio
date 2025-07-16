@@ -17,11 +17,11 @@ const slideInLeft = keyframes`
 // Keyframe para o CarrosselContainer e Title tirar o blur e aparecer
 const fadeInBlur = keyframes`
   from {
-    filter: blur(10px); /* Começa com um blur pesado */
+    filter: blur(10px);
     opacity: 0; /* E invisível */
   }
   to {
-    filter: blur(0px); /* Termina sem blur */
+    filter: blur(0px);
     opacity: 1; /* E totalmente visível */
   }
 `;
@@ -31,10 +31,6 @@ export const Conteiner = styled.div`
   padding: 2.5% 0; 
   background-color: black;
   height: 100%;
-  /* AJUSTE AQUI: Remove min-height: 100vh para que se ajuste ao conteúdo */
-  /* Se você quiser um mínimo para garantir que o carrossel apareça, use um valor em px, ex: min-height: 400px; */
-  /* Mas para "ajustar ao conteúdo", não defina uma altura mínima grande. */
-  /* min-height: 100vh; */ /* LINHA REMOVIDA/COMENTADA */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,8 +83,6 @@ export const CarrosselContainer = styled.div`
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  
-  /* Mantendo altura controlada, mas você pode ajustar se o conteúdo ficar muito apertado */
   height: 100%;
 
   opacity: 0;
@@ -109,10 +103,7 @@ export const CarrosselContainer = styled.div`
 export const CarrosselWrapper = styled.div`
   display: flex;
   width: 55%; 
-  /* REMOVIDO: transform: translateX(${props => props.translateX}px); */
-  
-  /* AJUSTE AQUI: Diminuindo o gap entre as imagens */
-  gap: 20px; /* Novo gap padrão para desktop */
+  gap: 20px;
   border-radius: 25px;
 
   @media (max-width: 1200px) {
@@ -120,10 +111,10 @@ export const CarrosselWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    gap: 15px; /* Novo gap em tablets */
+    gap: 15px;
   }
   @media (max-width: 500px){
-    gap: 10px; /* Novo gap em celulares */
+    gap: 10px;
   }
 `;
 
@@ -135,12 +126,7 @@ export const Slide = styled.div`
   align-items: center;
   padding: 1% 0;
   flex-shrink: 0; 
-  flex-grow: 0; 
-
-  /* AJUSTE AQUI: Atualizando flex-basis para o novo gap e número de itens visíveis */
-  /* O número de slides visíveis permanece o mesmo que a lógica anterior (5, 3, 2) */
-  /* Mas agora a largura do gap dentro do calc() é menor */
-  
+  flex-grow: 0;   
   /* Desktop (5 slides visíveis) */
   flex-basis: calc((100% / 5) - (20px * 4 / 5)); 
   min-width: calc((100% / 5) - (20px * 4 / 5)); 
@@ -181,12 +167,12 @@ export const Slide = styled.div`
 `;
 
 export const TecnologiaImagem = styled.img`
-  /* AJUSTE AQUI: Aumentando o tamanho das imagens */
+ 
   height: 100px; /* Tamanho padrão para desktop */
   width: 100px; /* Tamanho padrão para desktop */
   object-fit: contain; 
   flex-shrink: 0; 
-  margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+  margin-bottom: 10px; 
 
   @media (max-width: 768px) {
     height: 80px; /* Tamanho em tablets */

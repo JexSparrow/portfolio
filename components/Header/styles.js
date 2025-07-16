@@ -36,17 +36,17 @@ export const HamburgerIcon = styled.div`
   width: 30px;
   height: 25px;
   cursor: pointer;
-  z-index: 1000; /* Garante que fique acima de tudo, incluindo Sidebar e Overlay */
+  z-index: 1000;
 
   /* Posição fixa para estar sempre visível no canto superior direito */
   position: fixed;
-  top: 25px; /* Ajuste a distância do topo */
-  right: 20px; /* Ajuste a distância da direita */
+  top: 25px; 
+  right: 20px;
   
   div {
     width: 100%;
     height: 3px;
-    background-color: aliceblue; /* Cor padrão */
+    background-color: aliceblue;
     border-radius: 2px;
     transition: all 0.3s linear;
     transform-origin: 1px;
@@ -60,7 +60,7 @@ export const HamburgerIcon = styled.div`
   @media (max-width: 480px) {
     top: 20px;
     right: 15px;
-    width: 25px; /* Pode reduzir um pouco o tamanho do ícone */
+    width: 25px;
     height: 20px;
   }
 
@@ -106,14 +106,14 @@ export const Sidebar = styled.nav`
   position: fixed;
   top: 0;
   right: 0;
-  height: 50vh; /* Mantido conforme sua alteração */
-  width: 200px; /* Mantido conforme sua alteração */
-  background-color: rgba(45, 8, 76, 0.6); /* Mantido conforme sua alteração */
-  backdrop-filter: blur(10px); /* Mantido conforme sua alteração */
-  z-index: 999; /* Acima do overlay, abaixo do HamburgerIcon */
+  height: 50vh; 
+  width: 200px; 
+  background-color: rgba(45, 8, 76, 0.6); 
+  backdrop-filter: blur(10px);
+  z-index: 999; 
   display: flex;
   flex-direction: column;
-  padding-top: 80px; /* Espaço para o topo (onde o header ficaria por baixo) */
+  padding-top: 80px;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
@@ -157,15 +157,10 @@ export const LinkSidebar = styled.a`
   }
 
   img {
-    display: none; /* Mantido conforme sua alteração - esconde img dentro do link da sidebar */
+    display: none;
   }
 `;
 
-// ==============================================================================
-// AJUSTES NOS SEUS COMPONENTES EXISTENTES
-// ==============================================================================
-
-// Seu Conteiner (Header) existente
 export const Conteiner = styled.div`
   background-color: rgba(144, 4, 204, 0.41);
   backdrop-filter: blur(5px);
@@ -187,10 +182,10 @@ export const Conteiner = styled.div`
 
 
   @media (max-width: 650px) {
-    /* AGORA: Centralizar a LogoWrapper (jslogo) quando o hamburger é fixo */
-    justify-content: center; /* Centraliza horizontalmente a LogoWrapper */
-    align-items: center; /* Centraliza verticalmente a LogoWrapper */
-    padding: 10px 20px; /* Mantém padding para evitar que o LogoWrapper cole nas bordas */
+   
+    justify-content: center;
+    align-items: center; 
+    padding: 10px 20px; 
     min-height: 70px;
   }
 
@@ -211,7 +206,7 @@ export const Conteiner = styled.div`
 }
 `;
 
-// Seu LogoWrapper existente
+
 export const LogoWrapper = styled.div`
   position: relative;
   display: flex;
@@ -261,7 +256,6 @@ export const LogoWrapper = styled.div`
   }
 `;
 
-// Seu Link existente (Links para Desktop)
 export const Link = styled.a`
   font-family: 'Orbitron', sans-serif;
   color: aliceblue;
@@ -297,7 +291,6 @@ export const Link = styled.a`
   }
 `;
 
-// Seu componente Download
 export const Download = styled.img`
   height: 25px;
   cursor: pointer;

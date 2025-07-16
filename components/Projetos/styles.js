@@ -3,47 +3,46 @@ import { projetosInfo } from '../../src/utils/projetosInfo';
 
 const slideInLeft = keyframes`
   from {
-    transform: translateX(-100%); /* Começa 100% fora da tela à esquerda */
+    transform: translateX(-100%);
     opacity: 0;
   }
   to {
-    // Mantido 120% conforme sua definição original, mesmo que isso mova o elemento para fora da tela.
-    transform: translateX(120%); /* Termina na posição original */
+    transform: translateX(120%);
     opacity: 1;
   }
 `;
 
 const slideInRight = keyframes`
   from {
-    transform: translateX(100%); /* Começa 100% fora da tela à direita */
+    transform: translateX(100%);
     opacity: 0;
   }
   to {
-    transform: translateX(0); /* Termina na posição original */
+    transform: translateX(0);
     opacity: 1;
   }
 `;
 
 const fadeInBlur = keyframes`
   from {
-    filter: blur(10px); /* Começa com um blur pesado */
-    opacity: 0; /* E invisível */
+    filter: blur(10px);
+    opacity: 0;
   }
   to {
-    filter: blur(0px); /* Termina sem blur */
-    opacity: 1; /* E totalmente visível */
+    filter: blur(0px);
+    opacity: 1;
   }
 `;
 
 export const BackgroundVideo = styled.video`
-  position: absolute; /* Fixo na viewport */
+  position: absolute;
   right: 0;
   bottom: 0;
-  width: 100%; /* Garante que cubra toda a largura */
-  height: 100%; /* Garante que cubra toda a altura */
-  z-index: -2; /* Bem no fundo */
-  object-fit: cover; /* Cobre a área, cortando se necessário, sem distorcer */
-  pointer-events: none; /* Para garantir que não haja interações indesejadas com o vídeo em si */
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  object-fit: cover;
+  pointer-events: none;
   filter: brightness(0.5);
 `;
 
@@ -81,7 +80,6 @@ export const Conteiner = styled.div`
 `;
 
 export const BoxTitle = styled.div`
-  /* ... */
 `;
 
 export const Title = styled.h1`
@@ -90,11 +88,10 @@ export const Title = styled.h1`
   font-size: 5rem;
   color: #fff;
   text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
-  animation: ${shadowDance} 2s infinite; /* Usando o keyframe corrigido */
+  animation: ${shadowDance} 2s infinite;
   transition: 200ms all ease-in-out;
-  transform: translateX(100%); /* Começa 100% fora da tela à direita */
+  transform: translateX(100%);
   opacity: 0;
-
 
   &:hover {
     scale: 1.05;
@@ -121,11 +118,11 @@ export const Paragrafo = styled.p`
   font-family: 'Tektur';
   letter-spacing: 1px;
   font-size: 1.5rem;
-  position: absolute; // Mantenho position: absolute; conforme sua solicitação.
+  position: absolute;
   text-shadow: 1px 1px 1px #ff005e, 2px 2px 1px #00d4ff;
   transition: 200ms all ease-in-out;
-  transform: translateX(-100%); /* Começa 100% fora da tela à direita */
-  opacity: 0; 
+  transform: translateX(-100%);
+  opacity: 0;
   
   &:hover {
     scale: 1.05;
@@ -185,57 +182,51 @@ export const Slider = styled.div`
 
 export const SliderTrack = styled.div`
   display: flex;
-  /* Ajuste a largura base do SliderTrack para que os slides fiquem mais próximos */
-  width: calc(350px * ${projetosInfo.length * 2}); /* Diminuído de 450px para 350px */
+  width: calc(350px * ${projetosInfo.length * 2});
   animation: ${scroll} 40s linear infinite;
 
   @media (max-width: 1000px) {
-    width: calc(300px * ${projetosInfo.length * 2}); /* Diminuído de 375px para 300px */
+    width: calc(300px * ${projetosInfo.length * 2});
   }
 
   @media (max-width: 650px) {
-    width: calc(250px * ${projetosInfo.length * 2}); /* Diminuído de 300px para 250px */
+    width: calc(250px * ${projetosInfo.length * 2});
   }
 
   @media (max-width: 480px) {
-    width: calc(180px * ${projetosInfo.length * 2}); /* Diminuído de 225px para 180px */
+    width: calc(180px * ${projetosInfo.length * 2});
   }
 `;
 
 export const Slide = styled.div`
   flex-shrink: 0;
-  /* Ajuste a largura de cada Slide individualmente */
-  width: 350px; /* Diminuído de 450px para 350px */
+  width: 350px;
 
   @media (max-width: 1000px) {
-    width: 300px; /* Diminuído de 375px para 300px */
+    width: 300px;
   }
 
   @media (max-width: 650px) {
-    width: 250px; /* Diminuído de 300px para 250px */
+    width: 250px;
   }
 
   @media (max-width: 480px) {
-    width: 180px; /* Diminuído de 225px para 180px */
+    width: 180px;
   }
 
-
   img {
-    /* Ajustes para as imagens dentro do slide */
-    height: 200px; /* **Aumentado para que as imagens fiquem maiores em desktop** */
-    width: auto; /* Mantém a proporção */
-    max-width: 260px; /* **Aumentado para que as imagens fiquem maiores em desktop** */
-    object-fit: contain; /* Garante que a imagem caiba sem cortar, mantendo a proporção */
+    height: 200px;
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
     cursor: pointer;
     transition: 150ms all ease-in-out;
-    display: block; /* Garante que o img se comporte como um bloco para o margin: auto */
-    margin: 0 auto; /* Centraliza a imagem dentro do Slide */
+    display: block;
+    margin: 0 auto;
     transition: 300ms all ease-in-out;
 
     &:hover {
-
       scale: 1.1;
-
     }
 
     @media (max-width: 1500px){
@@ -243,7 +234,7 @@ export const Slide = styled.div`
       max-width: 200px;
     }
 
-    @media (max-width: 1000px) { /* Adicionado este breakpoint específico para imagem */
+    @media (max-width: 1000px) {
       height: 120px;
       max-width: 160px;
     }
@@ -258,7 +249,6 @@ export const Slide = styled.div`
       max-width: 120px;
     }
   }
-
 `;
 
 export const ProjetoDetalhesContainer = styled.div`
@@ -272,7 +262,7 @@ export const ProjetoDetalhesContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 10;
-  padding: 10px; /* Adiciona um padding para não colar nas bordas em telas pequenas */
+  padding: 10px;
 `;
 
 export const ConteinerVideoInfos = styled.div`
@@ -286,8 +276,8 @@ export const ConteinerVideoInfos = styled.div`
   align-items: center;
   gap: 2%;
   padding: 1%;
-  box-shadow: #01FFFE 0px 0px 70px -20px inset,
-              0px 0px 20px 0px #01FFFE;
+  box-shadow: #01fffe 0px 0px 70px -20px inset,
+              0px 0px 20px 0px #01fffe;
 
   @media (max-width: 1000px){
     flex-direction: column;
@@ -315,7 +305,7 @@ export const ConteinerVideo = styled.div`
     transition: 250ms all ease-in-out;
 
     &:hover {
-      color: #01FFFE;
+      color: #01fffe;
       scale: 0.95;
     }
 
@@ -327,8 +317,8 @@ export const ConteinerVideo = styled.div`
   iframe {
     border: none;
     box-shadow: rgba(0, 255, 238, 0.51) 0px 0px 100px -20px;
-    width: 100%; /* Padrão para desktop */
-    height: 400px; /* Padrão para desktop */
+    width: 100%;
+    height: 400px;
 
     @media (max-width: 1000px){
       height: 270px;
@@ -354,7 +344,7 @@ export const ConteinerVideo = styled.div`
 
 export const ProjetoDetalhes = styled.div`
   height: 100%;
-  max-width: 55%; /* Padrão para desktop */
+  max-width: 55%;
   color: wheat;
   position: relative;
   display: flex;
@@ -367,10 +357,18 @@ export const ProjetoDetalhes = styled.div`
     margin-top: 2%;
     font-family: 'Orbitron';
     font-size: 20px;
+    transition: 300ms all ease-in-out;
+    display: inline;
+
+    &:hover {
+      color: yellow;
+    }
+
+
   }
 
   img {
-    height: 76px; /* Altura padrão para desktop */
+    height: 76px;
     cursor: pointer;
     transition: 150ms all ease-in-out;
 
@@ -399,26 +397,23 @@ export const ProjetoDetalhes = styled.div`
     }
   }
 
-  // Media Query para 1000px: Ocupa mais espaço em coluna
   @media (max-width: 1000px) {
-    max-width: 95%; /* Ocupa quase toda a largura quando em coluna */
-    height: auto; /* Altura automática */
-    gap: 2%; /* Reduz o gap entre os elementos internos */
+    max-width: 95%;
+    height: auto;
+    gap: 2%;
   }
 
-  // Media Query para 650px
   @media (max-width: 650px) {
     gap: 1.5%;
   }
 
-  // Media Query para 480px
   @media (max-width: 480px) {
     gap: 1%;
   }
 `;
 
 export const ProjetoTitulo = styled.h2`
-  font-size: 2.75em; /* Padrão para desktop */
+  font-size: 2.75em;
   font-family: 'Orbitron';
   letter-spacing: 2px;
   transition: 250ms all ease-in-out;
@@ -427,20 +422,17 @@ export const ProjetoTitulo = styled.h2`
     color: yellow;
   }
 
-  // Media Query para 1000px
   @media (max-width: 1000px) {
-    font-size: 1.8em; /* Diminui a fonte */
-    margin-bottom: 10px; /* Adiciona um espaço */
+    font-size: 1.8em;
+    margin-bottom: 10px;
   }
 
-  // Media Query para 650px
   @media (max-width: 650px) {
     font-size: 1.6em;
     letter-spacing: 1px;
     margin-bottom: 8px;
   }
 
-  // Media Query para 480px
   @media (max-width: 480px) {
     font-size: 1.4em;
     letter-spacing: 0.5px;
@@ -449,34 +441,31 @@ export const ProjetoTitulo = styled.h2`
 `;
 
 export const ProjetoDescricao = styled.p`
-  line-height: 95%; /* Padrão para desktop */
+  line-height: 95%;
   text-align: left;
   white-space: pre-line;
-  font-size: 1.4em; /* Padrão para desktop */
+  font-size: 1.4em;
   font-family: 'Anta';
-  margin-bottom: 10px; /* Espaçamento padrão */
+  margin-bottom: 10px;
 
   @media (max-width: 1450px) {
     font-size: 1.1em;
-    line-height: 120%; /* Aumenta o line-height para melhor leitura em telas menores */
+    line-height: 120%;
     margin-bottom: 4px;
   }
 
-  // Media Query para 1000px
   @media (max-width: 1000px) {
     font-size: 1em;
-    line-height: 120%; /* Aumenta o line-height para melhor leitura em telas menores */
+    line-height: 120%;
     margin-bottom: 8px;
   }
 
-  // Media Query para 650px
   @media (max-width: 650px) {
     font-size: 0.90em;
     line-height: 130%;
     margin-bottom: 6px;
   }
 
-  // Media Query para 480px
   @media (max-width: 480px) {
     font-size: 0.85em;
     line-height: 140%;
@@ -486,29 +475,26 @@ export const ProjetoDescricao = styled.p`
 
 export const ProjetoLink = styled.a`
   font-family: 'Oxanium';
-  font-size: 30px; /* Padrão para desktop */
+  font-size: 30px;
   color: aliceblue;
   text-decoration: none;
   font-weight: bold;
   transition: 200ms all ease-in-out;
   margin: 0 auto;
 
-  &:hover { scale: 1.15; color: #01FFFE; }
+  &:hover { scale: 1.15; color: #01fffe; }
   &:active { scale: 0.90; }
 
-  // Media Query para 1000px
   @media (max-width: 1000px) {
     font-size: 24px;
-    margin-top: 10px; /* Adiciona um pouco de espaço acima */
+    margin-top: 10px;
   }
 
-  // Media Query para 650px
   @media (max-width: 650px) {
     font-size: 20px;
     margin-top: 8px;
   }
 
-  // Media Query para 480px
   @media (max-width: 480px) {
     font-size: 16px;
     margin-top: 5px;

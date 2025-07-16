@@ -58,7 +58,7 @@ function Projetos() {
                     }
                 });
             },
-            { threshold: 0.1 } // Sugestão para teste: anima com 10% visível
+            { threshold: 0.1 }
         );
 
         // Observer para o CarrosselContainer
@@ -67,11 +67,11 @@ function Projetos() {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         setpIsVisible(true);
-                        pObserver.unobserve(entry.target); // Para disparar a animação apenas uma vez
+                        pObserver.unobserve(entry.target);
                     }
                 });
             },
-            { threshold: 0.5 } // Sugestão para teste: anima com 10% visível (era 0.85)
+            { threshold: 0.5 }
         );
 
         const sliderObserver = new IntersectionObserver(
@@ -83,7 +83,7 @@ function Projetos() {
                     }
                 });
             },
-            { threshold: 0.5 } // Sugestão para teste: anima com 10% visível
+            { threshold: 0.5 }
         );
 
         // Observa os elementos se eles existirem
@@ -103,7 +103,7 @@ function Projetos() {
             if (currentPRef) pObserver.unobserve(currentPRef);
             if (currentSliderRef) sliderObserver.unobserve(currentSliderRef);
         };
-    }, []); // As dependências estão vazias porque os observers e refs não mudam entre renderizações
+    }, []);
 
     return (
         <Conteiner ref={projetosRef}>

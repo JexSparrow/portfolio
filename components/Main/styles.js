@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-// Keyframes para o conteúdo vindo da esquerda
 export const slideInLeft = keyframes`
   from {
     transform: translateX(-100%);
@@ -12,7 +11,6 @@ export const slideInLeft = keyframes`
   }
 `;
 
-// Keyframes para a imagem vindo da direita
 export const slideInRight = keyframes`
   from {
     transform: translateX(100%);
@@ -29,28 +27,20 @@ export const BackgroundVideo = styled.video`
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 100%; /* Usar 100% aqui é ok se o pai for 100vh ou 100% de um elemento de altura definida */
+  height: 100%;
   z-index: -2;
   object-fit: cover;
   pointer-events: none;
   filter: brightness(0.75);
-
 `;
 
 export const Conteiner = styled.div`
-  
   position: relative;
-  /* Mudar para min-height: 100vh para garantir que ele tenha pelo menos a altura da tela,
-     mas possa crescer se o conteúdo exigir. */
- 
   width: 100%;
-  /* Remover overflow: hidden aqui se você quer que o conteúdo role dentro do Conteiner */
-  /* overflow: hidden; // Comentar ou remover se o conteúdo for rolável */
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: #01FFFE 0px -30px 60px -30px;
-  
+  box-shadow: #01fffe 0px -30px 60px -30px;
 `;
 
 export const Simbolo = styled.span`
@@ -59,58 +49,45 @@ export const Simbolo = styled.span`
 
 export const DivTop = styled.div`
   background-color: rgba(45, 8, 76, 0.75);
-  /* Remover position: absolute e height: 100% para que DivTop entre no fluxo normal do Conteiner */
-  /* top: 0; left: 0; */
   width: 100%;
-  /* height: 100%; Removido para que a altura seja baseada no conteúdo */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row; /* Padrão para desktop */
+  flex-direction: row;
   gap: 5%;
-  padding: 4% 2.5%; /* Mantém o padding horizontal */
+  padding: 4% 2.5%;
   box-shadow: rgb(0, 0, 0) 0px -50px 20px -28px inset;
- 
-  
 
-
-  /* Media Query para telas menores (usando um breakpoint mais adequado) */
-  @media (max-width: 1000px) { /* Este breakpoint parece ser onde você quer a transição */
-    flex-direction: column; /* Quebra para coluna */
-    padding: 20px 2.5%; /* Ajusta padding para telas menores */
-    justify-content: center; /* Centraliza verticalmente */
-    /* Garante que o DivTop se ajuste e permita rolagem se o conteúdo for muito grande */
-    min-height: auto; /* Deixa a altura ser determinada pelo conteúdo */
-    /* Remove a necessidade de height:100% que pode cortar conteúdo */
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    padding: 20px 2.5%;
+    justify-content: center;
+    min-height: auto;
   }
 
-   @media (max-width: 800px ){
+  @media (max-width: 800px) {
     padding: 12% 0;
   }
 
-  > div { /* Estiliza o div interno que contém título e parágrafo */
+  > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Alinha o texto à esquerda por padrão */
+    align-items: flex-start;
     text-align: left;
     z-index: 1;
     pointer-events: auto;
-    /* Flex-basis para controlar a largura do bloco de texto */
-   
-    
-    margin: 20px 0; /* Adiciona margem para separar do topo/base do DivTop */
+    margin: 20px 0;
 
-
-    @media (max-width: 1200px) { /* Aplica quando DivTop vira coluna */
-      align-items: center; /* Centraliza o texto quando em coluna */
+    @media (max-width: 1200px) {
+      align-items: center;
       text-align: center;
-      flex-basis: 100%; /* Ocupa a largura total */
-      max-width: 100%; /* Sem limite de largura em telas pequenas */
-      margin-bottom: 20px; /* Margem inferior para separar do próximo item (imagem) */
+      flex-basis: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
     }
-    @media (max-width: 768px) { /* Ajustes para telas menores */
-      margin: 10px 0; /* Reduz margem vertical */
+    @media (max-width: 768px) {
+      margin: 10px 0;
     }
   }
 
@@ -124,7 +101,7 @@ export const DivTop = styled.div`
     transform: translateX(-100%);
     opacity: 0;
 
-    @media (max-width: 1200px) { /* Ajustes para telas médias/pequenas */
+    @media (max-width: 1200px) {
       font-size: 1.2rem;
     }
     @media (max-width: 768px) {
@@ -146,7 +123,7 @@ export const DivTop = styled.div`
     opacity: 0;
 
     @media (max-width: 1326px) {
-      font-size: 3.5rem; /* Ajuste o tamanho da fonte para telas menores */
+      font-size: 3.5rem;
       letter-spacing: 7px;
     }
     @media (max-width: 768px) {
@@ -159,7 +136,7 @@ export const DivTop = styled.div`
     }
   }
 
-  span { /* Este span é o Simbolo dentro do h1, ou talvez um span genérico */
+  span {
     font-family: 'Orbitron';
     font-size: 52px;
     letter-spacing: 0px;
@@ -177,7 +154,7 @@ export const DivTop = styled.div`
     }
   }
 
-  img { /* Estiliza a Imagem diretamente aqui para simplificar */
+  img {
     height: 450px;
     border-radius: 50%;
     z-index: 1;
@@ -195,10 +172,9 @@ export const DivTop = styled.div`
     animation: ${slideInRight} 1.2s ease-out forwards;
     animation-delay: 300ms;
 
-    /* Media Queries para a imagem */
-    @media (max-width: 1326px) { /* Ajusta altura da imagem quando DivTop vira coluna */
+    @media (max-width: 1326px) {
       height: 300px;
-      margin-top: 20px; /* Adiciona margem superior para separar do texto */
+      margin-top: 20px;
     }
     @media (max-width: 768px) {
       height: 200px;
@@ -215,19 +191,17 @@ export const DivParagrafo = styled.div`
   display: flex;
   flex-direction: column;
 
-   > p:first-of-type {
-        font-size: 28px;
-       
+  > p:first-of-type {
+    font-size: 28px;
 
-        @media (max-width: 800px ){
-          display: none;
-        }
-   }
-
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
 
   span {
     font-size: 26px;
-    color: #01FFFE;
+    color: #01fffe;
     font-family: 'Anta';
     transition: 200ms all ease-in-out;
 
@@ -236,14 +210,10 @@ export const DivParagrafo = styled.div`
     }
 
     @media (max-width: 1326px) {
-
-     
-
       font-size: 1.3rem;
     }
     @media (max-width: 768px) {
       font-size: 1rem;
-
     }
   }
 

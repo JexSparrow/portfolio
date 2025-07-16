@@ -16,15 +16,14 @@ const fadeInUpAndScale = keyframes`
 export const BackgroundVideo = styled.video`
   position: absolute; /* Fixo na viewport */
   right: 0;
-  bottom: -50px; /* Ajuste se necessário para cobrir a parte inferior */
+  bottom: -50px;
   width: 100%; /* Garante que cubra toda a largura */
   height: 107%; /* Garante que cubra toda a altura com uma margem extra */
-  z-index: -2; /* Bem no fundo */
+  z-index: -2;
   object-fit: cover; /* Cobre a área, cortando se necessário, sem distorcer */
   pointer-events: none; /* Para garantir que não haja interações indesejadas com o vídeo em si */
   filter: brightness(0.99); /* Ajuste o brilho conforme desejado */
 
-  // Responsividade para o BackgroundVideo
   @media (max-width: 650px) {
     height: 100%; /* Em telas menores, pode ser melhor 100% para evitar scroll indesejado */
     bottom: 0; /* Remove o offset se a altura for 100% */
@@ -34,7 +33,7 @@ export const BackgroundVideo = styled.video`
 export const Conteiner = styled.div`
   position: relative;
   background-color: rgba(0, 0, 0, 0.85);
-  height: 100%; /* Considerar min-height se o conteúdo for dinâmico */
+  height: 100%; 
   display: flex;
   gap: 50px;
   justify-content: center;
@@ -120,7 +119,7 @@ export const Title = styled.h2`
 export const FormBox = styled.div`
   background-color: rgba(144, 4, 204, 0.41);
   backdrop-filter: blur(2.5px);
-  height: 100%; /* Altura pode ser ajustada ou min-height */
+  height: 100%; 
   min-width: 35%; /* Largura mínima em desktop */
   max-width: 80%; /* Largura máxima para evitar que ocupe demais */
   border-radius: 25px;
@@ -231,7 +230,7 @@ export const Input = styled.input`
   // Responsividade para o Input
   @media (max-width: 1000px) {
     font-size: 1.3em;
-    height: 2.2em; /* Pode precisar de um pouco mais de altura com fontes menores */
+    height: 2.2em;
   }
 
   @media (max-width: 650px) {
@@ -242,7 +241,7 @@ export const Input = styled.input`
   @media (max-width: 480px) {
     font-size: 1em;
     height: 2.8em;
-    padding: 0 4%; /* Mais padding lateral em telas muito pequenas */
+    padding: 0 4%;
   }
 `;
 
@@ -250,8 +249,8 @@ export const TextArea = styled.textarea`
   font-family: 'Oxanium';
   font-weight: 500;
   font-size: 1.5em;
-  height: 6em; /* Altura baseada na fonte */
-  padding: 2%; /* Padding interno */
+  height: 6em;
+  padding: 2%; 
   border: none;
   border-radius: 10px;
   resize: none; /* Desativa o redimensionamento pelo usuário */
@@ -281,14 +280,14 @@ export const TextArea = styled.textarea`
   }
 
   &::-webkit-scrollbar-track {
-    background-color: rgb(94, 218, 0); /* Cor de fundo da trilha */
+    background-color: rgba(0, 189, 218, 0.67); /* Cor de fundo da trilha */
     border-radius: 4px;
   }
 
   // Responsividade para o TextArea
   @media (max-width: 1000px) {
     font-size: 1.3em;
-    height: 7em; /* Aumenta um pouco a altura para acomodar texto menor */
+    height: 7em; 
     padding: 3%;
   }
 
@@ -315,9 +314,9 @@ export const Button = styled.button`
   display: flex;
   margin: 0 auto;
   line-height: 1em;
-  max-width: 50%; /* Limita a largura máxima */
-  min-width: 40%; /* Largura mínima para o botão */
-  padding: 3px; /* Padding ao redor do span */
+  max-width: 50%; 
+  min-width: 40%; 
+  padding: 3px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -348,7 +347,7 @@ export const Button = styled.button`
   }
 
   &:hover span {
-    background: none; /* Remove o background do span ao hover */
+    background: none;
   }
 
   // Responsividade para o Button
@@ -388,7 +387,7 @@ export const Whatsapp = styled.a`
     right: 1%;
     bottom: 3%;
     z-index: 999;
-    height: 55px; /* Altura padrão para desktop */
+    height: 55px;
     transition: 200ms all ease-in;
     cursor: pointer;
 
@@ -408,7 +407,7 @@ export const Whatsapp = styled.a`
   @media (max-width: 650px) {
     img {
       height: 40px;
-      right: 2%; /* Ajusta a posição um pouco para a direita */
+      right: 2%;
       bottom: 2.5%;
     }
   }
@@ -435,11 +434,9 @@ export const Arrow = styled.a`
     transform: translateY(-10px);
   }
 
-  img { /* Assume que você terá uma imagem dentro de Arrow */
-    height: 55px; /* Adiciona uma altura padrão para a imagem */
+  img {
+    height: 55px;
   }
-
-  // Responsividade para o Arrow (se tiver uma imagem)
   @media (max-width: 1000px) {
     img {
       height: 48px;

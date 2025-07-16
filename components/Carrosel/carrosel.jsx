@@ -107,12 +107,6 @@ function Carrosel() {
                 }
 
                 const nextPosition = prevPosition - animationSpeed;
-                // Para calcular singleWidth, precisamos da largura real de UM slide no wrapper.
-                // O problema é que wrapperRef.current.offsetWidth / tecnologiasDuplicadas.length
-                // divide a largura TOTAL visível do wrapper pelo número de todos os slides.
-                // Se os slides têm um gap e uma largura definida por flex-basis,
-                // precisamos do valor do flex-basis para o cálculo de reset.
-                // A forma mais robusta é usar o scrollWidth e dividir pela metade (uma volta completa).
                 const wrapperScrollWidth = wrapperRef.current.scrollWidth;
                 const resetThreshold = -wrapperScrollWidth / 2; // Uma volta completa da primeira leva de slides
 
@@ -127,7 +121,7 @@ function Carrosel() {
         animationFrameId = requestAnimationFrame(animate);
 
         return () => cancelAnimationFrame(animationFrameId);
-    }, [animationSpeed, numeroDeTecnologias]); // tecnlogiasDuplicadas.length é redundante se numeroDeTecnologias é usada
+    }, [animationSpeed, numeroDeTecnologias]);
 
     return (
         <>
@@ -143,7 +137,7 @@ function Carrosel() {
                         {tecnologiasDuplicadas.map((tec, index) => (
                             <Slide
                                 key={index}
-                                // totalSlides ainda é útil para calcular a largura base do slide no CSS
+
                                 totalSlides={tecnologiasDuplicadas.length}
                             >
                                 <TecnologiaImagem src={tec.imagem} alt={tec.nome} />

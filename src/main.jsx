@@ -6,7 +6,6 @@ import Header from '../components/Header/header.jsx'
 import Footer from '../components/Footer/footer.jsx'
 import Carrosel from '../components/Carrosel/carrosel.jsx'
 import Projetos from '../components/Projetos/projetos.jsx'
-import Marquee from '../components/Marquee/marquee.jsx';
 import Form from '../components/Form/form.jsx';
 
 import GlobalStyles from './styles/globalStyles.js';
